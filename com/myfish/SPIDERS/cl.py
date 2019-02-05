@@ -19,7 +19,7 @@ import tablib
 import random
 
 
-mylist = ['MP1','MP2','MP3','JULIA','園田','MP6','MP7','MP8','MP9']
+mylist = ['周妍希','矮矬穷','MP3','JULIA','園田','MP6','MP7','MP8','MP9']
 
 user_agent_list = [ "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
                     "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
