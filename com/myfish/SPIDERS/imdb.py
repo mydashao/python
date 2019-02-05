@@ -113,17 +113,7 @@ def get_movie_pro(id):
     except AttributeError:
         budget = ''
     release_date = soup.find('div', {'class': 'a-row a-spacing-base'}).find('span', {'class': 'a-declarative'}).get_text().strip().replace('\n','')
-    # release_date = release_date
-    # print(len(release_date))
-    # count = 0
-    # for i in range(len(release_date)):
-    #     count =count+1
-    #     print(str(count)+':'+ release_date[i])
-    #print(release_date)
-    # (1'ID',2'title',3'citle',4'IMDB_rate',5'vote',
-    # 'Meta_rate','Mtime_rate','douban_rate','my_rate','type',
-    # 'runtime','director','stars','budget','gross',
-    # 'production','release_date','watch_date','rate_date')
+
     print('    投资:' + budget)
     print('    票房:' + gross)
     print('    上映日期：'+release_date)
