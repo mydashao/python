@@ -19,7 +19,11 @@ import tablib
 import random
 
 
-mylist = ['周妍希','矮矬穷','MP3','JULIA','園田','MP6','MP7','MP8','MP9']
+#mylist = ['芽菜']
+mylist = ['推女','尤蜜荟','易阳','松果','周妍希','矮矬穷','妲己','egg','龚玥菲','李妍曦','麦苹果','心妍'
+          '玩具酱','小胖丁','芒果','酥麻','小秋秋','宇航员'
+          '一坊','仙女','户外','奔驰','二嫂','粉丝','露出','热巴','珍珠','熟','伦','会员','屎','尿','CB']
+
 
 user_agent_list = [ "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
                     "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
@@ -48,11 +52,13 @@ def crawl(url):
 
            # print(herf)
             #print(len(mylist))
-            for find in range(len(mylist)):
+            for find in mylist:
                 #print(mylist[find])
-                if mylist[find] in content:
+                if find in content:
                     #print('转到get——info')
+                    print(find)
                     get_info(content,herf)
+
 
 
         except :
@@ -70,8 +76,9 @@ def get_info(content,href):
     url_content = "https://cl.d35.xyz/"+href
     print('  '+url_content)
 
-BASE_URL = 'https://cl.d35.xyz/thread0806.php?fid=15&search=&page='
-for LAST_URL in range(20):
+BASE_URL = 'https://cl.d35.xyz/thread0806.php?fid=25&search=&page='
+
+for LAST_URL in range(50):
     url =BASE_URL+str(LAST_URL+1)
     print(url)
     crawl(url)

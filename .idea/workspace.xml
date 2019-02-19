@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e96e99a-fc9a-4429-9d5b-3c7f7d195703" name="Default" comment="from home" />
+    <list default="true" id="3e96e99a-fc9a-4429-9d5b-3c7f7d195703" name="Default" comment="from home">
+      <change afterPath="$PROJECT_DIR$/com/myfish/basic/test_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/myfish/basic/text/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/myfish/SPIDERS/cl.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/myfish/SPIDERS/cl.py" afterDir="false" />
+    </list>
     <ignored path="Python.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,19 +33,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/myfish/3/Error.py">
+        <entry file="file://$PROJECT_DIR$/com/myfish/basic/test_list.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="84">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/myfish/SPIDERS/imdb.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3150">
+              <caret line="156" column="20" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/com/myfish/3/request.py">
+        <entry file="file://$PROJECT_DIR$/com/myfish/SPIDERS/cl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="294">
+              <caret line="22" column="76" selection-start-line="22" selection-start-column="76" selection-end-line="22" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -98,6 +115,9 @@
         <option value="$PROJECT_DIR$/com/myfish/movie/textdb.py" />
         <option value="$PROJECT_DIR$/com/myfish/movie/imdb_spider.py" />
         <option value="$PROJECT_DIR$/com/myfish/3/request.py" />
+        <option value="$PROJECT_DIR$/com/myfish/basic/birthdays.py" />
+        <option value="$PROJECT_DIR$/com/myfish/basic/test_list.py" />
+        <option value="$PROJECT_DIR$/com/myfish/SPIDERS/cl.py" />
       </list>
     </option>
   </component>
@@ -107,7 +127,9 @@
     <option name="width" value="1940" />
     <option name="height" value="916" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -131,13 +153,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="myfish" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="myfish" type="462c0819:PsiDirectoryNode" />
-              <item name="3" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -151,11 +166,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\myfish\workspace\python\com\myfish\basic\text" />
+      <recent name="C:\Users\myfish\workspace\python\com\myfish\text" />
       <recent name="C:\Users\myfish\workspace\python\com\myfish" />
       <recent name="D:\untitled\Python\com\myfish\movie\ajax" />
       <recent name="D:\untitled\Python\com\myfish\movie" />
-      <recent name="D:\untitled\Python\com\myfish" />
-      <recent name="D:\untitled\Python\com\myfish\basic\5.Dictionary" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -170,7 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.imdb_spider">
+  <component name="RunManager" selected="Python.cl">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -190,7 +205,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="douban_imdb" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="birthdays" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -198,11 +213,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish/movie" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish/basic" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/movie/douban_imdb.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\myfish\workspace\python\com\myfish\basic\text\birthdays.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cl" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish/SPIDERS" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/SPIDERS/cl.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -232,7 +268,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="insertOrUpdate" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -240,32 +276,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish/movie/Database" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish/basic" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/movie/Database/insertOrUpdate.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="testsel" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish/movie/Database" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/movie/Database/testsel.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/basic/test_list.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -296,19 +311,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.douban_imdb" />
       <item itemvalue="Python.imdb_spider" />
-      <item itemvalue="Python.insertOrUpdate" />
-      <item itemvalue="Python.testsel" />
       <item itemvalue="Python.textdb" />
+      <item itemvalue="Python.cl" />
+      <item itemvalue="Python.birthdays" />
+      <item itemvalue="Python.test_list" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.cl" />
+        <item itemvalue="Python.test_list" />
+        <item itemvalue="Python.birthdays" />
         <item itemvalue="Python.imdb_spider" />
         <item itemvalue="Python.textdb" />
-        <item itemvalue="Python.insertOrUpdate" />
-        <item itemvalue="Python.testsel" />
-        <item itemvalue="Python.douban_imdb" />
       </list>
     </recent_temporary>
   </component>
@@ -330,19 +345,32 @@
       <option name="project" value="LOCAL" />
       <updated>1549370627033</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="from home">
+      <created>1549371328057</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549371328057</updated>
+    </task>
+    <task id="LOCAL-00003" summary="from home">
+      <created>1549371543626</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1549371543626</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18123667" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18923241" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899868" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38353196" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3347779" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.1579602" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -428,10 +456,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/basic/catlogo.png">
+    <entry file="file://$PROJECT_DIR$/com/myfish/basic/text/catlogo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/basic/zophie.png">
+    <entry file="file://$PROJECT_DIR$/com/myfish/basic/text/zophie.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/com/myfish/movie/NoSQL/PyMongo.py">
@@ -496,13 +524,6 @@
       </provider>
     </entry>
     <entry file="file://C:/Python36/Lib/codecs.py" />
-    <entry file="file://$PROJECT_DIR$/com/myfish/movie/Database/insertOrUpdate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/myfish/movie/douban_imdb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -527,17 +548,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/3/Error.py">
+    <entry file="file://$PROJECT_DIR$/com/myfish/text/de.py" />
+    <entry file="file://$PROJECT_DIR$/com/myfish/text/test_request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/text/text_tablib.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/basic/text/census2010.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/basic/text/allMyCats1.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/basic/text/birthdays.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/text/test_error.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/3/request.py">
+    <entry file="file://$PROJECT_DIR$/com/myfish/movie/Database/insertOrUpdate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="504">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/basic/test_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/SPIDERS/imdb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3150">
+          <caret line="156" column="20" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/SPIDERS/cl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="22" column="76" selection-start-line="22" selection-start-column="76" selection-end-line="22" selection-end-column="76" />
         </state>
       </provider>
     </entry>
