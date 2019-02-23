@@ -71,12 +71,13 @@ def get_html(title,citle,id,release_date):
 
     option = webdriver.ChromeOptions()
     option.add_argument('--headless')
-    #browser = webdriver.Chrome(chrome_options=option)
-    browser = webdriver.Chrome()
-    wait = WebDriverWait(browser, 10)
+
+    browser = webdriver.Chrome(chrome_options=option)
+    #browser = webdriver.Chrome()
+    #wait = WebDriverWait(browser, 10)
     browser.get(search_url)
     imdb_id = id
-    #print(browser.page_source)
+    print(browser.page_source)
     list = browser.find_elements_by_class_name('title-text')
     for name in list:
         #print( name.text)
