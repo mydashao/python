@@ -86,7 +86,6 @@ def get_html(title,citle,id,release_date):
 
         douban_citle = name.text[:ind]
 
-        #if(abs(int(float(year)) -int(float(douban_year)))<1):
         if (abs(int(float(year)) -int(float(douban_year)))<1 and similar(citle,douban_citle)>0.6) :
             print('    影片名：' + citle)
             print('    豆瓣名：' + douban_citle)
