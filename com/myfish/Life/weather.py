@@ -55,7 +55,7 @@ def weather_info(list_detail):
     count = 10003
     detail_url  = 'http://www.tianqihoubao.com/'+list_detail
     soup = get_html(detail_url)
-    time.sleep(5)
+    time.sleep(15)
     day_list = soup.find("table").find_all("td")
     for day in day_list:
         info = day.get_text().strip().replace(' ','').replace("\r\n","")
@@ -75,7 +75,6 @@ def weather_info(list_detail):
 
             count = count-1
 
-    time.sleep(15)
     save_to_excel(mylist)
 
 def save_to_excel(mylist):

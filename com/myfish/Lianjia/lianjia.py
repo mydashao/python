@@ -39,7 +39,7 @@ url = 'bp'+zj1+'ep'+mj2+'ba'+mj1+'ea'+mj2+'l3l4l5hu0sf1lc2lc3lc5f5ie2'
 '''
 
 first_url = 'https://bj.lianjia.com/ershoufang/chaoyang/pg'
-last_rul = 'co52ng0hu1hu0nb0bp500ep1200ba80ea20000l3l4l5hu0sf1lc2lc3lc5f5ie2'
+last_rul = 'ie2f5lc2lc3lc5l2l3l4l5ea20000ep1000/'
 
 
 mylist = []
@@ -69,6 +69,7 @@ def house_info(i):
     for item in list:
         url = item.find_element_by_class_name('noresultRecommend').get_attribute('href')
         id = item.find_element_by_tag_name('a').get_attribute('data-housecode')
+        id = "lj"+id
         title = item.find_element_by_class_name('title').find_element_by_tag_name('a').text.strip()
         info1 = item.find_element_by_class_name('address').find_element_by_class_name('houseInfo').text.strip()
         a = info1.find("/")
@@ -127,39 +128,38 @@ def house_info(i):
 
 
         print('====================' + str(count) + '====================')
-        print(' 链接 :' + url)
-        print(' ID :' + str(id))
+        # print(' 链接 :' + url)
+        # print(' ID :' + str(id))
         print(' 简介 :' + title)
-        print(' 地区 :' + diqu)
-        print(' 总价 :' + zongjia)
-        print(' 单价 :' + danjia)
-        print(' 详情 :')
-        print(' 小区 :' + xiaoqu)
-        print(' 户型 :' + huxing)
-        print(' 面积 :' + mianji)
-        print(' 朝向 :' + chaoxiang)
-        print(' 装修 :' + zhuangxiu)
-        print(' 电梯 :' + dianti)
-        print(' 楼层 :' + louceng)
-        print(' 总高 :' + zonggao)
-
-        print(' 年代 :' + niandai)
-        print(' 楼型 :' + louxing)
-        print(' 地铁 :' + ditie)
-        print(' VR :' + VR)
-        print(' 购房 :' + taxfree)
-        print(' 看房 :' + kanfang)
-        print(' 关注 :' + guanzhu)
-        print(' 带看 :' + daikan)
+        # print(' 地区 :' + diqu)
+        # print(' 总价 :' + zongjia)
+        # print(' 单价 :' + danjia)
+        # print(' 详情 :')
+        # print(' 小区 :' + xiaoqu)
+        # print(' 户型 :' + huxing)
+        # print(' 面积 :' + mianji)
+        # print(' 朝向 :' + chaoxiang)
+        # print(' 装修 :' + zhuangxiu)
+        # print(' 电梯 :' + dianti)
+        # print(' 楼层 :' + louceng)
+        # print(' 总高 :' + zonggao)
+        #
+        # print(' 年代 :' + niandai)
+        # print(' 楼型 :' + louxing)
+        # print(' 地铁 :' + ditie)
+        # print(' VR :' + VR)
+        # print(' 购房 :' + taxfree)
+        # print(' 看房 :' + kanfang)
+        # print(' 关注 :' + guanzhu)
+        # print(' 带看 :' + daikan)
 
         mylist.append([id, title, diqu, xiaoqu, zongjia, danjia, huxing, mianji, chaoxiang, zhuangxiu,
     dianti, louceng,zonggao, niandai, louxing, ditie, VR, taxfree, kanfang, guanzhu,daikan,url])
 
         count=count+1
 
-
-    time.sleep(10)
     save_to_excel(mylist)
+    time.sleep(10)
 
 
 def save_to_excel(mylist):

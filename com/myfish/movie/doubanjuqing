@@ -1,12 +1,4 @@
 #!/usr/bin/env python
-
-#电影分类https://movie.douban.com/tag/#/?sort=U&range=0,10&tags=%E7%94%B5%E5%BD%B1
-
-
-
-
-
-
 import urllib.request
 from bs4 import BeautifulSoup
 
