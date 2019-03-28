@@ -38,7 +38,9 @@ url = 'bp'+zj1+'ep'+mj2+'ba'+mj1+'ea'+mj2+'l3l4l5hu0sf1lc2lc3lc5f5ie2'
 
 '''
 
-first_url = 'https://bj.lianjia.com/ershoufang/chaoyang/pg'
+district = 'dongcheng'
+
+first_url = 'https://bj.lianjia.com/ershoufang/dongcheng/pg'
 last_rul = 'ie2f5lc2lc3lc5l2l3l4l5ea20000ep1000/'
 
 
@@ -171,7 +173,7 @@ def save_to_excel(mylist):
 
     mylist = tablib.Dataset(*mylist, headers=headers)
 
-    with open('D:\zhaofang.xlsx', 'wb') as f:
+    with open('D:\zhaofang_dongcheng.xlsx', 'wb') as f:
         f.write(mylist.export('xlsx'))
 
 
