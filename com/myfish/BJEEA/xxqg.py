@@ -4,7 +4,6 @@
 # 文章获得焦点
 # 视频音量最小化
 import sys
-
 import logging
 import datetime
 import json
@@ -16,7 +15,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-cookie="cookie: __UID__=181dac50-492b-11e9-a898-5ba8c5112414; token=ea004323ae634ed698d68f5b021da2d0"
 
 # 常量，阅读观看等时长，单位分钟
 READ=2
@@ -179,7 +177,6 @@ def get_session():
                 time.sleep(1)
                 if complete == COMPLETE_MSG:
                     end = end+1
-
                 else :logger.debug('请登录')
 
             elif detail == READ_MSG :
@@ -187,7 +184,6 @@ def get_session():
                 if  complete == COMPLETE_MSG:
                     # logger.debug('阅读完成')
                     end = end+1
-
                 else:
                     rest = 6-had
                     logger.debug('         阅读剩余分数:%d分',rest)
@@ -200,7 +196,6 @@ def get_session():
                 if complete == COMPLETE_MSG:
                     # logger.debug('观看完成')
                     end = end+1
-
                 else:
                     rest = 6-had
                     logger.debug('         视频剩余分数:%d分',rest)
@@ -213,7 +208,6 @@ def get_session():
                 if complete == COMPLETE_MSG:
                     # logger.debug('阅读时间完成')
                     end = end+1
-
                 else:
                     rest = 6 - had
                     logger.debug('         阅读学习时长剩余分数:%d分', rest)

@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e96e99a-fc9a-4429-9d5b-3c7f7d195703" name="Default" comment="from home">
-      <change afterPath="$PROJECT_DIR$/com/ee.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/lianjia.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/myfish/download_pic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/myfish/download_pic/zfl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/myfish/ganbuzaixian.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/myfish/get_picture.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/myfish/mp4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/myfish/scrapy/book_spider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/myfish/text/textseleium.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com/xuexiqiangguo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/appnium/xiehe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/myfish/text/test_log.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/myfish/cl.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/myfish/cl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/myfish/lianjia.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxypool" beforeDir="false" afterPath="$PROJECT_DIR$/proxypool" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxypool/examples/proxytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/proxypool/examples/proxytest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/myfish/BJEEA/xxqg.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/myfish/BJEEA/xxqg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/myfish/download_pic/zfl.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/myfish/download_pic/zfl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/myfish/ganbuzaixian.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/myfish/ganbuzaixian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/myfish/xxqg/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/appnium/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/myfish/xxqg/autorun.py" beforeDir="false" />
     </list>
     <ignored path="Python.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,37 +28,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/myfish/basic/test_list.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/myfish/cl.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/myfish/movie/imdb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3171">
-              <caret line="157" selection-start-line="157" selection-end-line="158" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/myfish/download_pic/zfl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="1071">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -76,61 +40,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/xuexiqiangguo.py">
+        <entry file="file://$PROJECT_DIR$/com/myfish/text/test_log.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4935">
-              <caret line="243" column="33" selection-start-line="243" selection-start-column="24" selection-end-line="243" selection-end-column="33" />
-              <folding>
-                <element signature="e#48#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/myfish/ganbuzaixian.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="63" column="36" selection-end-line="85" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="126">
+              <caret line="6" selection-start-line="6" selection-end-line="12" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/com/myfish/scrapy/book_spider.py">
+        <entry file="file://$PROJECT_DIR$/com/appnium/xiehe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/lianjia.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/myfish/text/textseleium.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Python36/Lib/site-packages/selenium/webdriver/remote/webelement.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9828">
-              <caret line="478" selection-start-line="478" selection-end-line="478" />
+            <state relative-caret-position="399">
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+              <folding>
+                <element signature="e#38#66#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,10 +71,14 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Error</find>
       <find>[18]</find>
       <find>kejian_tuwen2_icon</find>
+      <find>...</find>
+      <find>Error</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -193,11 +122,19 @@
         <option value="$PROJECT_DIR$/com/myfish/basic/test_list.py" />
         <option value="$PROJECT_DIR$/com/myfish/SPIDERS/cl.py" />
         <option value="$PROJECT_DIR$/com/myfish/download_pic.py" />
-        <option value="$PROJECT_DIR$/com/myfish/download_pic/zfl.py" />
         <option value="$PROJECT_DIR$/com/myfish/cl.py" />
         <option value="$PROJECT_DIR$/com/myfish/text/textseleium.py" />
-        <option value="$PROJECT_DIR$/com/myfish/ganbuzaixian.py" />
+        <option value="$PROJECT_DIR$/com/myfish/text/testyeld.py" />
+        <option value="$PROJECT_DIR$/com/myfish/scrapy/selector.py" />
+        <option value="$PROJECT_DIR$/com/myfish/scrapy/repon.py" />
+        <option value="$PROJECT_DIR$/com/myfish/scrapy/items.py" />
         <option value="$PROJECT_DIR$/com/myfish/scrapy/book_spider.py" />
+        <option value="$PROJECT_DIR$/com/myfish/scrapy/pipelines.py" />
+        <option value="$PROJECT_DIR$/com/myfish/ganbuzaixian.py" />
+        <option value="$PROJECT_DIR$/com/myfish/text/test_log.py" />
+        <option value="$PROJECT_DIR$/com/myfish/download_pic/zfl.py" />
+        <option value="$PROJECT_DIR$/com/myfish/BJEEA/xxqg.py" />
+        <option value="$PROJECT_DIR$/com/appnium/xiehe.py" />
       </list>
     </option>
   </component>
@@ -223,6 +160,23 @@
               <item name="python" type="b2602c69:ProjectViewProjectNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="appnium" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="myfish" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -231,15 +185,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\myfish\workspace\python\com" />
+      <recent name="C:\Users\myfish\workspace\python" />
       <recent name="C:\Users\myfish\workspace\python\com\myfish\basic\text" />
       <recent name="C:\Users\myfish\workspace\python\com\myfish\text" />
       <recent name="C:\Users\myfish\workspace\python\com\myfish" />
-      <recent name="D:\untitled\Python\com\myfish\movie\ajax" />
-      <recent name="D:\untitled\Python\com\myfish\movie" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -254,7 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.book_spider">
+  <component name="RunManager" selected="Python.xiehe">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -274,7 +228,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="book_spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="selector" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -286,7 +240,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/scrapy/book_spider.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/scrapy/selector.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -295,49 +249,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cl (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/cl.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ganbuzaixian" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/ganbuzaixian.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="textseleium" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test_log" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -349,7 +261,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/text/textseleium.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/text/test_log.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -358,7 +270,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="xuexiqiangguo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="xiehe" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -366,11 +278,53 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/appnium" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/xuexiqiangguo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/appnium/xiehe.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="xxqg" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish/BJEEA" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/BJEEA/xxqg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="zfl" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish/download_pic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/download_pic/zfl.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -380,19 +334,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.cl (1)" />
-      <item itemvalue="Python.xuexiqiangguo" />
-      <item itemvalue="Python.ganbuzaixian" />
-      <item itemvalue="Python.textseleium" />
-      <item itemvalue="Python.book_spider" />
+      <item itemvalue="Python.selector" />
+      <item itemvalue="Python.zfl" />
+      <item itemvalue="Python.test_log" />
+      <item itemvalue="Python.xxqg" />
+      <item itemvalue="Python.xiehe" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.book_spider" />
-        <item itemvalue="Python.ganbuzaixian" />
-        <item itemvalue="Python.textseleium" />
-        <item itemvalue="Python.xuexiqiangguo" />
-        <item itemvalue="Python.cl (1)" />
+        <item itemvalue="Python.xiehe" />
+        <item itemvalue="Python.xxqg" />
+        <item itemvalue="Python.zfl" />
+        <item itemvalue="Python.test_log" />
+        <item itemvalue="Python.selector" />
       </list>
     </recent_temporary>
   </component>
@@ -428,32 +382,76 @@
       <option name="project" value="LOCAL" />
       <updated>1549371543626</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="from home">
+      <created>1553689416787</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1553689416787</updated>
+    </task>
+    <task id="LOCAL-00005" summary="from home">
+      <created>1553780330478</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1553780330478</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21722364" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11696658" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899868" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39165545" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.15746972" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33657858" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33379695" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.2847222" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32962447" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3270525" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32839838" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11439589" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32899868" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1752434" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.15746972" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.44145358" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32962447" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3270525" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32839838" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="4" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -471,36 +469,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="from home" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/py/content.py" />
-    <entry file="file://$PROJECT_DIR$/com/myfish/3/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/com/myfish/movie/pq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/movie/Database/createDB.py" />
-    <entry file="file://$PROJECT_DIR$/com/myfish/movie/Database/createTable.py" />
-    <entry file="file://$PROJECT_DIR$/com/myfish/movie/Database/insertTable.py" />
-    <entry file="file://$PROJECT_DIR$/com/myfish/movie/ajax/getWeibo.py" />
-    <entry file="file://$PROJECT_DIR$/com/myfish/basic/6.String/string.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/basic/5.Dictionary/eggs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/basic/text/catlogo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/myfish/basic/text/zophie.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -591,23 +559,7 @@
     <entry file="file://$PROJECT_DIR$/com/myfish/movie/Database/insertOrUpdate.py" />
     <entry file="file://$PROJECT_DIR$/com/myfish/SPIDERS/imdb.py" />
     <entry file="file://$PROJECT_DIR$/com/myfish/SPIDERS/cl.py" />
-    <entry file="file://$PROJECT_DIR$/com/myfish/download_pic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding>
-            <element signature="e#1#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/doubanjuqing">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/doubanjuqing" />
     <entry file="file://$PROJECT_DIR$/com/myfish/movie/doubanjuqing">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -632,13 +584,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/cl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/cl.py" />
     <entry file="file://$PROJECT_DIR$/com/myfish/movie/imdb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3171">
@@ -646,13 +592,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/download_pic/zfl.py">
+    <entry file="file://$PROJECT_DIR$/com/myfish/scrapy/items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="84">
+          <caret line="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -668,11 +611,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/myfish/ganbuzaixian.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="63" column="36" selection-end-line="85" selection-end-column="7" />
+        <state relative-caret-position="217">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/scrapy/book_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/scrapy/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/download_pic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="e#1#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/get_picture.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -683,6 +660,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/scrapy/repon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/text/testyeld.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/scrapy/selector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python36/Lib/site-packages/selenium/webdriver/remote/webelement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="477" column="33" lean-forward="true" selection-start-line="477" selection-start-column="33" selection-end-line="477" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/com/myfish/text/textseleium.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -690,17 +695,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Python36/Lib/site-packages/selenium/webdriver/remote/webelement.py">
+    <entry file="file://$PROJECT_DIR$/com/myfish/BJEEA/xxqg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9828">
-          <caret line="478" selection-start-line="478" selection-end-line="478" />
+        <state relative-caret-position="126">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/scrapy/book_spider.py">
+    <entry file="file://D:/Python36/Lib/site-packages/urllib3/util/retry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state relative-caret-position="312">
+          <caret line="400" lean-forward="true" selection-start-line="400" selection-end-line="400" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/download_pic/zfl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/text/test_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" selection-start-line="6" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/appnium/xiehe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="e#38#66#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

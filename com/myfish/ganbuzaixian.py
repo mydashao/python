@@ -36,8 +36,6 @@ def login():
 
 def work(page,browser):
 
-
-
     # handles = browser.window_handles
     # browser.switch_to.window(handles[-1])
     # print(browser.page_source)
