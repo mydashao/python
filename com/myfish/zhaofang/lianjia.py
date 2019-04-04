@@ -35,6 +35,10 @@ location = {"andingmen","anzhen1","aolinpikegongyuan11","dongzhimen",
             "sanlitun","sanyuanqiao","shaoyaoju","taiyanggong","xibahe","yayuncun",
             "yayuncunxiaoying","wangjing"}
 district_list={"dongcheng","xicheng","chaoyang","haidian","fengtai"}
+
+district_list={"chaoyang"}
+
+
 huxing_dic = {
     "2室0厅": 3,
     "2室1厅": 5,
@@ -45,22 +49,25 @@ huxing_dic = {
     "4室0厅": 7,
     "4室1厅": 9,
     "4室2厅": 10,
+    "5室2厅": 11,
+    "5室2厅": 11
+
 }
+chaoxiang_rate=10
+huxing_rate=8
+zhuangxiu_rate=7
 
-zhuangxiu_rate=1
-huxing_rate=1
-
-louceng_rate=1
-zonggao_rate=1
-niandai_rate=1
-louxing_rate=1
-
+louceng_rate=8
+zonggao_rate=4
+niandai_rate=6
+louxing_rate=3.5
 
 VR_rate=1
-ditie_rate=1
+ditie_rate=6
 kanfang_rate=1
 
-taxfree_rate=1
+taxfree_rate=5
+
 '''
 l3l4l5 三四五居室
 ie2有电梯 ie1没电梯
@@ -82,9 +89,6 @@ mylist = []
 database =[]
 date1=''
 date2=''
-
-
-
 
 def house_info(dis,i):
     global count
@@ -163,81 +167,97 @@ def house_info(dis,i):
 
 
         # 计算总分
-        score += huxing_dic[huxing]
+        huxing_score  = huxing_dic[huxing]*huxing_rate
 
-        if chaoxiang.replace(' ','')=='南北':      score+=10*huxing_rate
-        elif chaoxiang.replace(' ','')=='东南北':  score+=7*huxing_rate
-        else: score+=4*huxing_rate
+        if chaoxiang.replace(' ','')=='南北':      chaoxiang_score=10*chaoxiang_rate
+        elif chaoxiang.replace(' ','')=='东南北':  chaoxiang_score=7*chaoxiang_rate
+        else: chaoxiang_score=4*huxing_rate
 
         if zhuangxiu == '精装':
-            score += 10*zhuangxiu_rate
+            zhuangxiu_score= 10*zhuangxiu_rate
         elif chaoxiang == '其他':
-            score += 6*zhuangxiu_rate
+            zhuangxiu_score = 6*zhuangxiu_rate
         elif chaoxiang == '简装':
-            score += 6*zhuangxiu_rate
+            zhuangxiu_score = 6*zhuangxiu_rate
         else:
-            score += 2*zhuangxiu_rate
+            zhuangxiu_score = 2*zhuangxiu_rate
 
-        if louceng == '高楼层':
-            score += 10*louceng_rate
-        elif louceng == '顶层':
-            score += 9*louceng_rate
-        elif louceng == '中楼层':
-            score += 7*louceng_rate
-        elif louceng == '低楼层':
-            score += 4.5*louceng_rate
-        else:
-            score += 2*louceng_rate
+        fangwu_score = chaoxiang_score+zhuangxiu_score+huxing_score
 
         try:
             if int(zonggao[1:-1]) >= 20:
-                score += 10*zonggao_rate
+                zonggao_score = 10*zonggao_rate
             elif int(zonggao[1:-1]) >= 15:
-                score += 8.8*zonggao_rate
+                zonggao_score = 8.5*zonggao_rate
             elif int(zonggao[1:-1]) >= 10:
-                score += 7.6*zonggao_rate
+                zonggao_score = 7*zonggao_rate
             else:
-                score += 6.4*zonggao_rate
-        except: score += 6.4*zonggao_rate
+                zonggao_score = 5*zonggao_rate
+        except: zonggao_score = 5*zonggao_rate
 
+        if louceng == '高楼层':
+            louceng_score = 10*louceng_rate
+        elif louceng == '顶层':
+            louceng_score = 9*louceng_rate
+        elif louceng == '中楼层':
+            louceng_score = 7*louceng_rate
+            zonggao_score = 0.5*zonggao_score
+        elif louceng == '低楼层':
+            louceng_score = 4.5*louceng_rate
+            zonggao_score = 0
+        else:
+            louceng_score = 2*louceng_rate
+            zonggao_score = 0
 
         if louxing == '板楼':
-            score += 10*louxing_rate
-        elif louceng == '板塔结合':
-            score += 8.5*louxing_rate
-        elif louceng == '塔楼':
-            score += 6.5*louxing_rate
+            louxing_score = 10*louxing_rate
+        elif louxing == '板塔结合':
+            louxing_score = 8.5*louxing_rate
+        else :
+            louxing_score = 6.5*louxing_rate
 
 
         # 楼龄
         if int(niandai) >= 2010:
-            score += 10*niandai_rate
+            niandai_score = 10*niandai_rate
         elif int(niandai) >= 2000:
-            score += 8*niandai_rate
+            niandai_score = 8*niandai_rate
         elif int(niandai) >= 1990:
-            score += 5*niandai_rate
+            niandai_score = 5*niandai_rate
         else:
-            score += 3*niandai_rate
+            niandai_score = 3*niandai_rate
+
+        lou_score = louxing_score + louceng_score + niandai_score + zonggao_score
+
         # 近地铁，vr,随时看房
         if ditie=='近地铁':
-            score += 10*ditie_rate
+            ditie_score = 10*ditie_rate
+        else:
+            ditie_score=0
         if VR == 'VR房源':
-            score += 10*VR_rate
-        if kanfang =='随时看房':
-            score += 10*kanfang_rate
+            VR_score = 10*VR_rate
+        else:
+            VR_score=0
+        if kanfang == '随时看房':
+            kanfang_score = 10*kanfang_rate
+        else:
+            kanfang_score=0
 
         # 满五唯一
         if taxfree=='5年':
-            score += 10*taxfree_rate
+            taxfree_score = 10*taxfree_rate
         elif taxfree == '2年':
-            score += 6*taxfree_rate
-        elif taxfree == '不满':
-            score += 2*taxfree_rate
+            taxfree_score = 6*taxfree_rate
+        else:
+            taxfree_score = 2*taxfree_rate
+
+        fujia_score = ditie_score+VR_score+kanfang_score+taxfree_score
+        score =(fujia_score+fangwu_score+lou_score)/5
 
         print('=================' + dis + '===' + str(count) + '=================')
         # print(' 链接 :' + url)
         # print(' ID :' + str(id))
-        print(score, ' 简介 :' + title)
+        print(score,' 简介 :' + title)
         # print(' 地区 :' + diqu)
         print(' 总价 :' + zongjia, end='')
         print(' 单价 :' + danjia)
