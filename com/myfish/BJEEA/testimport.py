@@ -1,2 +1,3 @@
 import xxqg
 
+xxqg.main()
