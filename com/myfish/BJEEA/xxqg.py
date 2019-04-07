@@ -103,7 +103,9 @@ def get_cookie():
 def get_session():
     # 打开积分页面
     login_url = 'https://pc.xuexi.cn/points/my-points.html'
-    browser = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--log-level=3')
+    browser = webdriver.Chrome(chrome_options=options)
     browser.get(login_url)
 
     # 获得已保存的cookie
@@ -169,7 +171,7 @@ def get_session():
             score = score + had
 
             # logger.debug('         '+detail+'-------'+complete,had,'-------',score)
-            logger.debug('         %s -------%s：%s-------今日总分：%d',detail,complete,had,score)
+            logger.debug('         %s ---%s：%s---今日总分：%d',detail,complete,had,score)
 
             # 每阶段如已完成，end+1
             # 如尚未完成,输出还剩多少分,并转到响应方法执行学习功能
