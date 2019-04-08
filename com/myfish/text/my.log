@@ -1,0 +1,10 @@
+2019-03-27 14:27:27 - DEBUG - This is a debug log.
+2019-03-27 14:27:27 - INFO - This is a info log.
+2019-03-27 14:27:27 - WARNING - This is a warning log.
+2019-03-27 14:27:27 - ERROR - This is a error log.
+2019-03-27 14:27:27 - CRITICAL - This is a critical log.
+2019-03-27 14:27:27 - INFO - 0
+2019-03-27 14:27:28 - INFO - 1
+2019-03-27 14:27:29 - INFO - 2
+2019-03-27 14:27:30 - INFO - 3
+2019-03-27 14:27:31 - INFO - 4

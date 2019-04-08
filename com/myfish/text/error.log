@@ -1,0 +1,108 @@
+2019-03-27 14:51:39,679 - ERROR - logtest.py[:22] - error message
+2019-03-27 14:51:39,679 - CRITICAL - logtest.py[:23] - critical message
+2019-03-27 15:01:41,178 - ERROR - logtest.py[:27] - error message
+2019-03-27 15:01:41,178 - CRITICAL - logtest.py[:28] - critical message
+2019-03-27 15:02:39,275 - mylogger - error message
+2019-03-27 15:02:39,276 - mylogger - critical message
+2019-03-27 15:04:29,427 - mylogger - error message
+2019-03-27 15:04:29,427 - mylogger - critical message
+2019-03-27 15:04:56,682 - mylogger - info message
+2019-03-27 15:04:56,682 - mylogger - warning message
+2019-03-27 15:04:56,682 - mylogger - error message
+2019-03-27 15:04:56,683 - mylogger - critical message
+2019-03-27 15:05:11,070 - mylogger - info message
+2019-03-27 15:05:11,070 - mylogger - warning message
+2019-03-27 15:05:11,070 - mylogger - error message
+2019-03-27 15:05:11,070 - mylogger - critical message
+2019-03-27 15:05:11,070 - mylogger - 0
+2019-03-27 15:05:11,071 - mylogger - 1
+2019-03-27 15:05:11,071 - mylogger - 2
+2019-03-27 15:05:11,071 - mylogger - 3
+2019-03-27 15:05:11,071 - mylogger - 4
+2019-03-27 15:05:11,071 - mylogger - 5
+2019-03-27 15:05:11,071 - mylogger - 6
+2019-03-27 15:05:11,071 - mylogger - 7
+2019-03-27 15:05:11,071 - mylogger - 8
+2019-03-27 15:05:11,071 - mylogger - 9
+2019-03-27 15:13:50,368 - ERROR - logtest.py[:44] - error message
+2019-03-27 15:13:50,368 - CRITICAL - logtest.py[:45] - critical message
+2019-03-27 15:13:50,369 - ERROR - logtest.py[:54] - error message
+2019-03-27 15:13:50,369 - CRITICAL - logtest.py[:55] - critical message
+2019-03-27 15:14:32,974 - ERROR - logtest.py[:45] - error message
+2019-03-27 15:14:32,974 - CRITICAL - logtest.py[:46] - critical message
+2019-03-27 15:14:32,976 - ERROR - logtest.py[:55] - error message
+2019-03-27 15:14:32,977 - CRITICAL - logtest.py[:56] - critical message
+2019-03-27 15:14:53,263 - ERROR - logtest.py[:45] - error message
+2019-03-27 15:14:53,263 - CRITICAL - logtest.py[:46] - critical message
+2019-03-27 15:14:53,263 - ERROR - logtest.py[:55] - error message
+2019-03-27 15:14:53,263 - CRITICAL - logtest.py[:56] - critical message
+2019-03-27 15:15:07,626 - mylogger - error message
+2019-03-27 15:15:07,626 - mylogger - critical message
+2019-03-27 15:15:07,627 - mylogger - error message
+2019-03-27 15:15:07,627 - mylogger - critical message
+2019-03-27 15:15:28,338 - mylogger - error message
+2019-03-27 15:15:28,338 - mylogger - critical message
+2019-03-27 15:15:28,339 - mylogger - error message
+2019-03-27 15:15:28,339 - mylogger - critical message
+2019-03-27 15:16:03,546 - mylogger - info message
+2019-03-27 15:16:03,546 - mylogger - warning message
+2019-03-27 15:16:03,547 - mylogger - error message
+2019-03-27 15:16:03,547 - mylogger - critical message
+2019-03-27 15:16:03,547 - mylogger - info message
+2019-03-27 15:16:03,547 - mylogger - warning message
+2019-03-27 15:16:03,547 - mylogger - error message
+2019-03-27 15:16:03,547 - mylogger - critical message
+2019-03-27 15:16:03,547 - mylogger - 0
+2019-03-27 15:16:03,547 - mylogger - 1
+2019-03-27 15:16:03,547 - mylogger - 2
+2019-03-27 15:16:03,547 - mylogger - 3
+2019-03-27 15:16:03,547 - mylogger - 4
+2019-03-27 15:16:03,548 - mylogger - 5
+2019-03-27 15:16:03,548 - mylogger - 6
+2019-03-27 15:16:03,548 - mylogger - 7
+2019-03-27 15:16:03,548 - mylogger - 8
+2019-03-27 15:16:03,548 - mylogger - 9
+2019-03-27 15:16:54,220 - mylogger - info message
+2019-03-27 15:16:54,221 - mylogger - warning message
+2019-03-27 15:16:54,221 - mylogger - error message
+2019-03-27 15:16:54,221 - mylogger - critical message
+2019-03-27 15:16:54,221 - mylogger - info message
+2019-03-27 15:16:54,221 - mylogger - warning message
+2019-03-27 15:16:54,221 - mylogger - error message
+2019-03-27 15:16:54,221 - mylogger - critical message
+2019-03-27 15:16:54,221 - mylogger - 0
+2019-03-27 15:16:54,221 - mylogger - 1
+2019-03-27 15:16:54,221 - mylogger - 2
+2019-03-27 15:16:54,221 - mylogger - 3
+2019-03-27 15:16:54,222 - mylogger - 4
+2019-03-27 15:16:54,222 - mylogger - 5
+2019-03-27 15:16:54,222 - mylogger - 6
+2019-03-27 15:16:54,222 - mylogger - 7
+2019-03-27 15:16:54,222 - mylogger - 8
+2019-03-27 15:16:54,222 - mylogger - 9
+2019-03-27 15:17:18 - mylogger - info message
+2019-03-27 15:17:18 - mylogger - warning message
+2019-03-27 15:17:18 - mylogger - error message
+2019-03-27 15:17:18 - mylogger - critical message
+2019-03-27 15:17:18 - mylogger - info message
+2019-03-27 15:17:18 - mylogger - warning message
+2019-03-27 15:17:18 - mylogger - error message
+2019-03-27 15:17:18 - mylogger - critical message
+2019-03-27 15:17:18 - mylogger - 0
+2019-03-27 15:17:18 - mylogger - 1
+2019-03-27 15:17:18 - mylogger - 2
+2019-03-27 15:17:18 - mylogger - 3
+2019-03-27 15:17:18 - mylogger - 4
+2019-03-27 15:17:18 - mylogger - 5
+2019-03-27 15:17:18 - mylogger - 6
+2019-03-27 15:17:18 - mylogger - 7
+2019-03-27 15:17:18 - mylogger - 8
+2019-03-27 15:17:18 - mylogger - 9
+2019-03-27 15:25:38 - mylogger - error message
+2019-03-27 15:25:38 - mylogger - critical message
+2019-03-27 15:25:38 - mylogger - error message
+2019-03-27 15:25:38 - mylogger - critical message
+2019-03-27 15:29:07 - mylogger - error message
+2019-03-27 15:29:07 - mylogger - critical message
+2019-03-27 15:29:07 - mylogger - error message
+2019-03-27 15:29:07 - mylogger - critical message
