@@ -1,3 +1,0 @@
-import xxqg
-
-xxqg.main()
