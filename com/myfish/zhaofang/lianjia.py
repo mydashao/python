@@ -2,13 +2,13 @@
 1. 根据url获取信息
 
 '''
-# todo 1. url提前，2.添加区标示，3.打分
 
 import random
 import requests
 import time
 from bs4 import BeautifulSoup
 from selenium import webdriver
+import pymysql
 
 import tablib
 
@@ -35,24 +35,11 @@ location = {"andingmen","anzhen1","aolinpikegongyuan11","dongzhimen",
             "sanlitun","sanyuanqiao","shaoyaoju","taiyanggong","xibahe","yayuncun",
             "yayuncunxiaoying","wangjing"}
 district_list={"dongcheng","xicheng","chaoyang","haidian","fengtai"}
+district_list={"fangshan"}
 
-district_list={"chaoyang"}
 
+diqu_rate= 20
 
-huxing_dic = {
-    "2室0厅": 3,
-    "2室1厅": 5,
-    "2室2厅": 7,
-    "3室0厅": 6,
-    "3室1厅": 8,
-    "3室2厅": 9,
-    "4室0厅": 7,
-    "4室1厅": 9,
-    "4室2厅": 10,
-    "5室2厅": 11,
-    "5室2厅": 11
-
-}
 chaoxiang_rate=10
 huxing_rate=8
 zhuangxiu_rate=7
@@ -77,12 +64,18 @@ url = 'bp'+zj1+'ep'+mj2+'ba'+mj1+'ea'+mj2+'l3l4l5hu0sf1lc2lc3lc5f5ie2'
 
 '''
 
-# first_url = 'https://bj.lianjia.com/ershoufang/chaoyang/pg'
-# last_rul = 'ie2f5lc2lc3lc5l2l3l4l5ea20000ep1000/'
 
+# 二手房
+# 价格：700-1200
+# 面积：70-200
+# 户型：二三四五居
+# 楼层
+# 朝向：东南和南北
+# 普通住宅
+# 有电梯
 first_url = 'https://bj.lianjia.com/ershoufang/'
 middle_url = "/pg"
-last_url = '/bp700ep1200ba70ea20000l2l3l4l5sf1f1f2f5ie2/'
+last_url = '/bp700ep1200ba70ea20000l2l3l4l5sf1f2f5ie2/'
 
 
 mylist = []
@@ -164,10 +157,90 @@ def house_info(dis,i):
         zongjia=item.find_element_by_class_name('totalPrice').text.strip()[:-1]
         danjia=item.find_element_by_class_name('unitPrice').text.strip()[2:-4]
 
+        if   diqu== '和平里':    diqu_score = 14 * diqu_rate
+        elif diqu == '和平里':   diqu_score = 10 * diqu_rate
+        elif diqu == '惠新西街':  diqu_score = 9 * diqu_rate
+        elif diqu == '芍药居':   diqu_score = 8 * diqu_rate
+        elif diqu == '亚运村': diqu_score = 8 * diqu_rate
+        elif diqu == '国展': diqu_score = 8 * diqu_rate
+        elif diqu == '亚运村小营': diqu_score = 8 * diqu_rate
+        elif diqu == '西坝河': diqu_score = 8 * diqu_rate
+        elif diqu == 'CBD': diqu_score = 7 * diqu_rate
+        elif diqu == '太阳宫': diqu_score = 8 * diqu_rate
+        elif diqu == '朝阳门外': diqu_score = 6 * diqu_rate
+        elif diqu == '健翔桥': diqu_score = 7 * diqu_rate
+        elif diqu == '三元桥': diqu_score = 7 * diqu_rate
+        elif diqu == '望京': diqu_score = 6 * diqu_rate
+        elif diqu == '奥林匹克公园': diqu_score = 6 * diqu_rate
+        elif diqu == '燕莎': diqu_score = 6 * diqu_rate
+        elif diqu == '北苑': diqu_score = 5 * diqu_rate
+        elif diqu == '大望路': diqu_score = 5 * diqu_rate
+        elif diqu == '南沙滩': diqu_score = 5 * diqu_rate
+        elif diqu == '农展馆': diqu_score = 5 * diqu_rate
+        elif diqu == '四惠': diqu_score = 3 * diqu_rate
+        elif diqu == '双井': diqu_score = 3 * diqu_rate
+        elif diqu == '朝阳公园': diqu_score = 3 * diqu_rate
+        elif diqu == '华威桥': diqu_score = 3 * diqu_rate
+        elif diqu == '劲松':   diqu_score = 3 * diqu_rate
+        elif diqu == '北工大': diqu_score = 3 * diqu_rate
+        elif diqu == '立水桥': diqu_score = 3 * diqu_rate
+        elif diqu == '潘家园': diqu_score = 3 * diqu_rate
+        elif diqu == '酒仙桥': diqu_score = 3 * diqu_rate
+        elif diqu == '红庙':   diqu_score = 3 * diqu_rate
+        elif diqu == '十里河': diqu_score = 3 * diqu_rate
+        elif diqu == '大山子': diqu_score = 2 * diqu_rate
+        elif diqu == '十八里店': diqu_score = 2 * diqu_rate
+        elif diqu == '双桥':  diqu_score = 1 * diqu_rate
+        elif diqu == '朝青':  diqu_score = 1 * diqu_rate
+        elif diqu == '东坝':  diqu_score = 1 * diqu_rate
+        elif diqu == '常营':  diqu_score = 1 * diqu_rate
+        elif diqu == '欢乐谷': diqu_score = 1 * diqu_rate
+        elif diqu == '豆各庄': diqu_score = 1 * diqu_rate
+        elif diqu == '石佛营': diqu_score = 1 * diqu_rate
+        elif diqu == '百子湾': diqu_score = 1 * diqu_rate
+        elif diqu == '甜水园': diqu_score = 2 * diqu_rate
+        elif diqu == '十里堡': diqu_score = 1 * diqu_rate
+        elif diqu == '成寿寺': diqu_score = 1 * diqu_rate
+        elif diqu == '垡头':   diqu_score = 1 * diqu_rate
+        elif diqu == '定福庄': diqu_score = 1 * diqu_rate
+        elif diqu == '高碑店': diqu_score = 1 * diqu_rate
+        elif diqu == '甘露园': diqu_score = 1 * diqu_rate
+        elif diqu == '朝阳其它': diqu_score = 1 * diqu_rate
+        else :                  diqu_score = 1 * diqu_rate
+
+        if zhuangxiu == '5室3厅':
+            huxing_score = 14 * huxing_rate
+        elif chaoxiang == '5室2厅':
+            huxing_score = 13 * huxing_rate
+        elif chaoxiang == '5室1厅':
+            huxing_score = 12 * huxing_rate
+        elif chaoxiang == '4室3厅':
+            huxing_score = 13 * huxing_rate
+        elif chaoxiang == '4室2厅':
+            huxing_score = 12 * huxing_rate
+        elif chaoxiang == '4室1厅':
+            huxing_score = 11 * huxing_rate
+        elif chaoxiang == '3室3厅':
+            huxing_score = 12 * huxing_rate
+        elif chaoxiang == '3室2厅':
+            huxing_score = 11 * huxing_rate
+        elif chaoxiang == '3室1厅':
+            huxing_score = 10 * huxing_rate
+        elif chaoxiang == '3室0厅':
+            huxing_score = 7 * huxing_rate
+        elif chaoxiang == '2室2厅':
+            huxing_score = 8 * huxing_rate
+        elif chaoxiang == '2室1厅':
+            huxing_score = 7 * huxing_rate
+        elif chaoxiang == '2室0厅':
+            huxing_score = 5 * huxing_rate
+        else:
+            huxing_score = 2 * huxing_rate
 
 
-        # 计算总分
-        huxing_score  = huxing_dic[huxing]*huxing_rate
+
+
+
 
         if chaoxiang.replace(' ','')=='南北':      chaoxiang_score=10*chaoxiang_rate
         elif chaoxiang.replace(' ','')=='东南北':  chaoxiang_score=7*chaoxiang_rate
@@ -218,14 +291,16 @@ def house_info(dis,i):
 
 
         # 楼龄
-        if int(niandai) >= 2010:
-            niandai_score = 10*niandai_rate
-        elif int(niandai) >= 2000:
-            niandai_score = 8*niandai_rate
-        elif int(niandai) >= 1990:
-            niandai_score = 5*niandai_rate
-        else:
-            niandai_score = 3*niandai_rate
+        try:
+            if int(niandai) >= 2010:
+                niandai_score = 10*niandai_rate
+            elif int(niandai) >= 2000:
+                niandai_score = 8*niandai_rate
+            elif int(niandai) >= 1990:
+                niandai_score = 5*niandai_rate
+            else:
+                niandai_score = 3*niandai_rate
+        except: niandai_score = 3*niandai_rate
 
         lou_score = louxing_score + louceng_score + niandai_score + zonggao_score
 
@@ -251,14 +326,17 @@ def house_info(dis,i):
         else:
             taxfree_score = 2*taxfree_rate
 
-        fujia_score = ditie_score+VR_score+kanfang_score+taxfree_score
-        score =(fujia_score+fangwu_score+lou_score)/5
+        fujia_score = diqu_score+ditie_score+VR_score+kanfang_score+taxfree_score
+        score =float('%.2f' %((fujia_score+fangwu_score+lou_score)/6))
+        rate_score = float('%.2f' % (score/int(danjia)*80000))
 
         print('=================' + dis + '===' + str(count) + '=================')
         # print(' 链接 :' + url)
         # print(' ID :' + str(id))
-        print(score,' 简介 :' + title)
+        print(' 简介 :' + title)
         # print(' 地区 :' + diqu)
+        print(' 评分 :' , score, end='')
+        print(' 性价比 :' , rate_score, end='')
         print(' 总价 :' + zongjia, end='')
         print(' 单价 :' + danjia)
         # print(' 详情 :')
@@ -285,26 +363,64 @@ def house_info(dis,i):
 
 
 
-        mylist.append([id,score,url, title, dis,diqu, xiaoqu, zongjia, danjia, huxing, mianji, chaoxiang, zhuangxiu,
+        mylist.append([id,score,rate_score,url, title, dis,diqu, xiaoqu, zongjia, danjia, huxing, mianji, chaoxiang, zhuangxiu,
     dianti, louceng,zonggao, niandai, louxing, ditie, VR, taxfree, kanfang, guanzhu,daikan])
 
         count=count+1
 
-    save_to_excel(mylist)
+    save_to_excel(dis,mylist)
     time.sleep(10)
 
 
-def save_to_excel(mylist):
+def save_to_excel(dis,mylist):
 
     headers = (
-    'ID','总分','url', '标题', '城区','地区',  '小区', '总价', '单价','户型', '面积', '朝向', '装修',
+    'ID','总分','性价比','url', '标题', '城区','地区',  '小区', '总价', '单价','户型', '面积', '朝向', '装修',
     '电梯', '楼层','总楼层', '年代', '楼型', '地铁', 'VR', '满五', '看房', '关注量','带看量')
     #print(mylist)
 
     mylist = tablib.Dataset(*mylist, headers=headers)
 
-    with open('D:\zhaofang.xlsx', 'wb') as f:
+    with open('D:\zhaofang_'+dis+'.xlsx', 'wb') as f:
         f.write(mylist.export('xlsx'))
+
+def save_to_database1():
+    db = pymysql.connect(host='localhost', user='root', password='777748', port=3306, db='zhaofang')
+    cursor = db.cursor()
+    try:
+
+        for i in range(3):
+            sql = "INSERT INTO zhaofang " \
+                  "(id,score,rate_score,url, title, " \
+                  "dis,diqu, xiaoqu, zongjia, danjia, " \
+                  "huxing, mianji, chaoxiang, zhuangxiu,dianti, " \
+                  "louceng,zonggao, niandai, louxing, " \
+                  "ditie, VR, taxfree, kanfang, guanzhu,daikan) VALUES " \
+                  "(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE " \
+                  "vote=" + "'" +str(mylist[i][4]) + "',"\
+                  "Meta_rate=" + "'" + str(mylist[i][5]) + "',"\
+                  "Mtime_rate=" + "'" + str(mylist[i][6] )+ "',"\
+                  "douban_rate=" + "'" + str(mylist[i][7]) + "',"\
+                  "my_rate=" + "'" +str( mylist[i][8]) + "',"\
+                  "budget=" + "'" + str(mylist[i][13]) + "',"\
+                  "gross=" + "'" + str(mylist[i][14]) + "'"\
+
+
+
+            cursor.execute(sql, (mylist[i][0],mylist[i][1],mylist[i][2],mylist[i][3],mylist[i][4],mylist[i][5],
+                                 mylist[i][6],mylist[i][7],mylist[i][8],mylist[i][9],mylist[i][10],mylist[i][11],
+                                 mylist[i][12], mylist[i][13],mylist[i][14],mylist[i][15],mylist[i][16],mylist[i][17],mylist[i][18]))
+
+            print(sql)
+            print('Successful')
+            db.commit()
+    except Exception as e:
+        print('错误')
+        print(e)
+
+        db.rollback()
+    db.close()
+
 
 
 def total_pages(url):
