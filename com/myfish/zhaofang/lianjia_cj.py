@@ -37,7 +37,9 @@ location = {"andingmen","anzhen1","aolinpikegongyuan11","dongzhimen",
             "yayuncunxiaoying","wangjing"}
 district_list=("dongcheng","xicheng","chaoyang","haidian","fengtai")
 
-zizhu_=("anzhen1","hepingli","xibahe","guozhan1","huixinxijie","taiyanggong","shaoyaoju","yayuncun", "yayuncunxiaoying")
+zizhu_=("anzhen1","hepingli","xibahe",
+             "guozhan1","huixinxijie","sanyuanqiao","taiyanggong","shaoyaoju",
+            "yayuncun", "yayuncunxiaoying")
 gaishan_=("aolinpikegongyuan11","wangjing","beiyuan2","nanshatan1")
 
 # xuequ_=("madian1","anzhen1",'dongzhimen','jiaodaokou','dongsi1','liupukang','deshengmen','xuanwumen12','andingmen')

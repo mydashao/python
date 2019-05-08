@@ -7,9 +7,9 @@ import os
 from urllib.parse import quote
 import  string
 
-LOG = "D:\pic\log.txt"
-keyword={'土肥圆','周妍希','乔依琳','小鸟酱','蕾丝兔','爱丝','假面女皇','无忌影社','私人玩物','麻酥酥',
-         '蜜桃社','极品露出','李妍曦','若兮','完具少女','尤妮丝','尤蜜荟','Toxic','宇航员','闫盼盼'}
+LOG = "D:\PanDownload\PanData\pic\log.txt"
+keyword=('宇航员','麦苹果','VIP','Toxic','闫盼盼','尤蜜荟','蜜桃社','土肥圆','周妍希','乔依琳','小鸟酱','蕾丝兔','心妍','假面女皇','无忌影社','私人玩物','麻酥酥',
+         '极品露出','李妍曦','若兮','完具少女','轰趴猫','易阳','松果','傲娇萌萌','玛鲁娜','徐cake')
 user_agent_list = [
     "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
     "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
@@ -26,14 +26,18 @@ url1 = '/serch.php?keyword='
 
 # 根据url返回soup对象
 def get_html(url):
+    try:
+        headers = {'User-Agent': '', 'referer': 'link'}
+        headers['User-Agent'] = random.choice(user_agent_list)
+        response = requests.get(url, headers=headers)
+        response.encoding = 'GBK'
+        html = response.text
+        soup = BeautifulSoup(html, "lxml")
+        return soup
+    except:
+        time.sleep(60)
+        main()
 
-    headers = {'User-Agent': '', 'referer': 'link'}
-    headers['User-Agent'] = random.choice(user_agent_list)
-    response = requests.get(url, headers=headers)
-    response.encoding = 'GBK'
-    html = response.text
-    soup = BeautifulSoup(html, "lxml")
-    return soup
 
 # URL中文字符转换
 def uri(key):
@@ -41,14 +45,18 @@ def uri(key):
 
 # 主方法，遍历keyword列表中的元素，用元素作为url中keyword的参数
 def main():
+    print(len(keyword))
+    count = 0
     for key in keyword:
+        count = 1+count
         uri_key = uri(key)
         url = main_url+url1+uri_key
-        print(url)
-        get_keyword(url)
+        print(count,key,url)
+        get_keyword(key,url)
 
 # 得到一个keyword元素的所有url，如果存在log中就跳过，如果不在log中，调用topic方法下载，最后获取本页面的下一页链接，抓取下一页
-def get_keyword(urls):
+def get_keyword(key,urls):
+    flag = 0
     soup = get_html(urls)
     url_list = soup.find_all('article',class_="excerpt")
     for url in url_list:
@@ -59,14 +67,17 @@ def get_keyword(urls):
 
         # print(full_url)
         if topic_url in get_log():
-            print(title, '已存在')
-            continue
+            print('    ',key,': ',title, '已存在')
+            flag = 1
+            break
         else:
-            full_url = 'https://zfl001.com' + topic_url
-            print(title, '开始下载')
+            full_url = 'https://gcfl001.com' + topic_url
+            print('    ',key,': ',title, '开始下载',full_url, end='')
             topic(title, full_url)
             save_log(topic_url)
 
+    if flag ==1:
+        return
 
     try:
         next_page = soup.find('li',class_="next-page").a['href']
@@ -74,7 +85,7 @@ def get_keyword(urls):
 
             next_page_url = main_url+uri(next_page)
             print(next_page_url)
-            get_keyword(next_page_url)
+            get_keyword(key,next_page_url)
     except:
         return
 
@@ -130,7 +141,7 @@ def download(pic_src,title):
     print('\r', file_name, end='',flush=True)
 
     r = requests.get(pic_src)
-    path = "D:\\pic\\"+folder_name
+    path = "D:\\PanDownload\\PanData\\pic"+folder_name
     if os.path.exists(path) is False:
         os.makedirs(path)
 

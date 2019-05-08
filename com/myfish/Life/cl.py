@@ -20,10 +20,8 @@ import random
 
 
 #mylist = ['风吟鸟唱']
-mylist = ['推女','尤蜜荟','易阳','松果','周妍希','矮矬穷','妲己','egg','龚玥菲','李妍曦','麦苹果','心妍'
-          '玩具酱','小胖丁','芒果','酥麻','小秋秋','宇航员'
-          '一坊','仙女','户外','奔驰','二嫂','粉丝','露出','热巴','珍珠','熟','伦','会员','屎','尿','CB']
-
+mylist = ['水野朝陽','julia','二阶堂百合','香椎','谷原希美','園田みおん','本田岬','白木優子','JULIA']
+m4ylist = ["JUY-782","JUY-721","JUFE-047","MRSS-066","AVSA-086","JUY-833","DDOB-049","DDOB-045","ABP-843","ABP-816","TRE-092","CESD-672","GCF-007","JUVR-001","JUY-844","RBD-920","WANZ-838","WANZ-852","juy-782","juy-721","jufe-047","mrss-066","avsa-086","juy-833","ddob-049","ddob-045","abp-843","abp-816","tre-092","cesd-672","gcf-007","juvr-001","juy-844","rbd-920","wanz-838","wanz-852","JUY782","JUY721","JUFE047","MRSS066","AVSA086","JUY833","DDOB049","DDOB045","ABP843","ABP816","TRE092","CESD672","GCF007","JUVR001","JUY844","RBD920","WANZ838","WANZ852","juy782","juy721","jufe047","mrss066","avsa086","juy833","ddob049","ddob045","abp843","abp816","tre092","cesd672","gcf007","juvr001","juy844","rbd920","wanz838","wanz852"]
 
 user_agent_list = [ "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
                     "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
@@ -56,7 +54,7 @@ def crawl(url):
                 #print(mylist[find])
                 if find in content:
                     #print('转到get——info')
-                    print(find)
+                    print('    ',find)
                     get_info(content,herf)
 
 
@@ -72,11 +70,11 @@ def crawl(url):
 
 
 def get_info(content,href):
-    print('  '+content)
-    url_content = "https://cl.d35.xyz/"+href
-    print('  '+url_content)
+    print('      '+content)
+    url_content = "https://cl.nswej.com/"+href
+    print('      '+url_content)
 
-BASE_URL = 'https://cl.d35.xyz/thread0806.php?fid=25&search=&page='
+BASE_URL = 'https://cl.nswej.com/thread0806.php?fid=15&search=&page='
 
 for LAST_URL in range(50):
     url =BASE_URL+str(LAST_URL+1)

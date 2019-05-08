@@ -30,13 +30,17 @@ mj2='200'
 j3='l3'
 j4='l4'
 j5='l5'
-location = {"andingmen","anzhen1","aolinpikegongyuan11","dongzhimen",
-            "gongti","guozhan1","hepingli","huixinxijie","madian1","nanshatan1",
-            "sanlitun","sanyuanqiao","shaoyaoju","taiyanggong","xibahe","yayuncun",
-            "yayuncunxiaoying","wangjing"}
-district_list={"dongcheng","xicheng","chaoyang","haidian","fengtai"}
 
-district_list={"haidian"}
+
+
+zizhu_=("anzhen","hepingli","xibahe",
+             "guozhan","huixinxijie","sanyuanqiao","taiyanggong","shaoyaoju",
+            "yayuncun", "yayuncunxiaoying")
+gaishan_=("aolinpikegongyuan","wangjing","beiyuan","nanshatan1")
+xuequ_=('madian','liupukang','deshengmen','xuanwumen','niujie','andingmen')
+# 筛选区县还是区域
+DIS_LIST = zizhu_
+EXCEL_NAME = 'zizhu_'
 
 diqu_rate= 20
 
@@ -55,18 +59,14 @@ kanfang_rate=1
 
 taxfree_rate=5
 
-'''
-l3l4l5 三四五居室
-ie2有电梯 ie1没电梯
-f朝向东南西北 f5南北朝向
-lc 楼层 lc5顶层
-url = 'bp'+zj1+'ep'+mj2+'ba'+mj1+'ea'+mj2+'l3l4l5hu0sf1lc2lc3lc5f5ie2'
+first_url = 'https://bj.5i5j.com/ershoufang/'
+last_url = '/b500e1200f1f3f5h300l80r2r3r4r5r9n'
 
-'''
-
-first_url = 'https://bj.5i5j.com/ershoufang/xichengqu/b500e1200f1f3f5h300l50r2r3r4r5r9n'
-
-
+zizhu_=("anzhen","hepingli","xibahe",
+             "guozhan","huixinxijie","sanyuanqiao","taiyanggong","shaoyaoju",
+            "yayuncun", "yayuncunxiaoying")
+gaishan_=("aolinpikegongyuan","wangjing","beiyuan","nanshatan1")
+xuequ_=('madian','liupukang','deshengmen','xuanwumen','niujie','andingmen')
 
 mylist = []
 database =[]
@@ -84,22 +84,21 @@ def get_html(url):
     try:
         title = soup.title.string
         print('没变：',title[0:40])
-
-
-
+        return soup
     except:
         print('改变啦')
-        script=html.head.script.text
-        url = script[script.find("'", 1):-1].strip()
         print(soup)
-        get_html(url)
 
-    return soup
+        script=soup.html.head.script.text
+        url = script[script.find("'", 1)+1:-2].strip()
+        print(url)
+        return get_html(url)
+
 
 def house_info(dis,i):
     global count
     page_url = str(i+1)
-    detail_url = first_url+page_url
+    detail_url = first_url+dis+last_url+page_url
     print(detail_url)
 
     soup = get_html(detail_url)
@@ -409,7 +408,7 @@ def save_to_excel(dis,mylist):
 
     mylist = tablib.Dataset(*mylist, headers=headers)
 
-    with open('D:\zhaofang_AJ_'+dis+'.xlsx', 'wb') as f:
+    with open('D:\AJ_'+EXCEL_NAME+'.xlsx', 'wb') as f:
         f.write(mylist.export('xlsx'))
 
 def save_to_database1():
@@ -453,7 +452,7 @@ def save_to_database1():
 
 def total_pages(url):
     soup = get_html(url)
-    print('total_pages',soup)
+    # print('total_pages',soup)
     house_number = int(soup.find('div', class_="total-box").text[3:-3].strip())
     page_number= int(get_url(house_number))
     print('----共计'+str(house_number)+'套房屋----')
@@ -469,8 +468,8 @@ def get_url(next_page):
         return int(next_page)/30+1
 
 def main():
-    for dis in district_list:
-        district_first_url = first_url + '1'
+    for dis in DIS_LIST:
+        district_first_url = first_url + dis + last_url
         print("区域："+dis)
         total_page=total_pages(district_first_url)
         for i in range(total_page):
