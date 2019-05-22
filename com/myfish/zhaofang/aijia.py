@@ -40,7 +40,6 @@ j5='l5'
 #             "yayuncun", "yayuncunxiaoying")
 # gaishan_=("aolinpikegongyuan","wangjing","beiyuan","nanshatan1")
 xuequ_=('madian','liupukang','deshengmen')
-xuequ_=('deshengmen')
 
 # 筛选区县还是区域
 DIS_LIST = xuequ_
@@ -216,6 +215,8 @@ def house_info(dis,i):
             huxing_score = 2 * huxing_rate
 
         chaoxiang = chaoxiang.replace(' ','')
+        cxset = set(chaoxiang)
+        chaoxiang =''.join(cxset)
         if chaoxiang =='南北':      chaoxiang_score=10*chaoxiang_rate
 
         elif chaoxiang =='东':  chaoxiang_score=5*chaoxiang_rate

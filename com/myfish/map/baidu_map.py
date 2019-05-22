@@ -1,21 +1,21 @@
 import requests
-from PIL import Image
 import numpy as np
+import os
+from PIL import Image
 
-
-def getOneUrl(url):
-    try:
-        r = requests.get(url, timeout=30)
-        r.raise_for_status()
-        r.encoding = r.apparent_encoding
-        return r.text
-    except:
-        print(111)
-        return -1  # 页面没正常下下来
-
-
-url = "http://api.map.baidu.com/staticimage/v2?ak=sbyWciweqv78BbudKs3LYFVf5uY8nEDc" \
-      "&mcode=666666&center=116.403874,39.914888&width=200&height=200&copyright=1&zoom=17"
+# def getOneUrl(url):
+#     try:
+#         r = requests.get(url, timeout=30)
+#         r.raise_for_status()
+#         r.encoding = r.apparent_encoding
+#         return r.text
+#     except:
+#         print(111)
+#         return -1  # 页面没正常下下来
+#
+#
+# url = "http://api.map.baidu.com/staticimage/v2?ak=sbyWciweqv78BbudKs3LYFVf5uY8nEDc" \
+#       "&mcode=666666&center=116.403874,39.914888&width=200&height=200&copyright=1&zoom=17"
 
 # a=getOneUrl(url)
 
@@ -33,16 +33,17 @@ https://gss0.bdstatic.com/8bo_dTSlRcgBo1vgoIiO_jowehsv/tile/?qt=vtile&x=50605&y=
 https://gss0.bdstatic.com/8bo_dTSlRcgBo1vgoIiO_jowehsv/tile/?qt=vtile&x=50617&y=18885&z=18&styles=pl&scaler=1&udt=20190518
 '''
 
-
-def urlToImg():
-    url = "http://api.map.baidu.com/staticimage/v2?ak=sbyWciweqv78BbudKs3LYFVf5uY8nEDc" \
-          "&mcode=666666&center=116.403874,39.914888&width=200&height=200&copyright=1&zoom=19"
-    r = requests.get(url)
-    with open("D:/选区模型/beijing02.png", 'ab') as pngf:
-        for chunk in r.iter_content(chunk_size=1024):
-            if chunk:
-                pngf.write(chunk)
-                pngf.flush()
+path = "D:\\picc"
+#
+# def urlToImg():
+#     url = "http://api.map.baidu.com/staticimage/v2?ak=sbyWciweqv78BbudKs3LYFVf5uY8nEDc" \
+#           "&mcode=666666&center=116.403874,39.914888&width=200&height=200&copyright=1&zoom=19"
+#     r = requests.get(url)
+#     with open("D:/选区模型/beijing02.png", 'ab') as pngf:
+#         for chunk in r.iter_content(chunk_size=1024):
+#             if chunk:
+#                 pngf.write(chunk)
+#                 pngf.flush()
 
 
 def savePngByXYZ(url, x, y,z,title):
@@ -51,7 +52,6 @@ def savePngByXYZ(url, x, y,z,title):
     sname = "D:/选区模型/cd_{y}_{x}.png".format(x=x, y=y)
     file_name = title
     # print(file_name)
-    print('\r', file_name)
 
     r = requests.get(url)
     path = "D:\\picc"
@@ -63,11 +63,15 @@ def savePngByXYZ(url, x, y,z,title):
 
 
 def getTileByXYZ():
+
     z = 19  # 成都[[22568,22678],[6897,7009]]
     # xidx = [22568,22580]
     # yidx = [6897,6910]
-    xidx = [101212, 101232]
-    yidx = [37770,37794]
+    xidx = [101212, 101222]
+    yidx = [37770,37784]
+    countx = xidx[1] - xidx[0]+1
+    county = yidx[1] - yidx[0]+1
+    print(countx,county)
     # xidx = [101212, 101222]
     # yidx = [37770,37784]
 
@@ -80,100 +84,67 @@ def getTileByXYZ():
             savePngByXYZ(url, x, y, 19,title)
         print(y)
 
-
-import os
-import glob
+    merge(countx,county)
 
 
-def complieImg():
-    # 命名规则：cd_x_y.png 左下坐标系
-    # 同一个x 同1列，y增加，图片在上面
-    # 假设输入排好序了
 
-    p = "D:/选区模型/chengduImg"  # chengduImg
-    plst = glob.glob(os.path.join(p, '*.png'))
+# import pyautogui
+# import re
+'''
+把当前目录下的10*10张jpeg格式图片拼接成一张大图片
 
-    xmin = ((plst[0].split("\\")[1]).split(".")[0]).split('_')[1]
-    alst = []  # 3维
-    qlst = []
-    for f in plst:
-        w = ((f.split("\\")[1]).split(".")[0]).split('_')  # ['cd', '22568', '6898']
-        w[0] = f
-        if w[1] == xmin:
-            qlst.append(w.copy())
-        else:
-            alst.append(qlst.copy())
-            xmin = w[1]
-            qlst = []
-    m2 = [256 * len(alst[0]), 256 * len(alst)]
-    # im2=Image.new('RGBA', (m2[0], m2[1]))
-    print(m2)
-    psave = "D:/选区模型/complexLevel"
-    iw = 0
-    for k in alst:  # k里面装的是x相同的值，y应该递增
-        plen = len(k)
-        # print(k[0])
-        msize = [256, 256 * (plen + 1)]
-        print(msize)
-        toImage = Image.new('RGBA', (msize[0], msize[1]))
-        for i in range(plen):
-            fromImage = Image.open(k[plen - i - 1][0])
-            toImage.paste(fromImage, (0 * msize[0], i * msize[0]))
+'''
 
-        # print(k[0])
-        sname = "/m_{x}.png".format(x=k[0][1])
-        iw += 1
-        # im2.paste(toImage)
-        toImage.save(psave + sname)
+def merge(countx,county):
+    # 图片压缩后的大小
+    width_i = 256
+    height_i = 256
 
-    # im2.save(psave  + '/chengduMap.png')
-    # 还是应该循环两次
+    # 每行每列显示图片数量
+    line_max = countx
+    row_max = county
+
+    # 参数初始化
+    all_path = []
+    num = 0
+    pic_max = line_max * row_max
 
 
-def complieImgInY():
-    # 命名规则：cd_x_y.png 左下坐标系
-    # 同一个x 同1列，y增加，图片在上面
-    # 假设输入排好序了
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            if "jpg" in file:
+                all_path.append(os.path.join(root, file))
 
-    p = "D:/选区模型/complexLevel"  # chengduImg
-    plst = glob.glob(os.path.join(p, '*.png'))
+    toImage = Image.new('RGBA', (width_i * line_max ,height_i * row_max))
+    print('分辨率',width_i * line_max,'*',height_i * row_max)
+    for i in range(0, row_max):
 
-    xmin = ((plst[0].split("\\")[1]).split(".")[0]).split('_')[1]
-    ima21 = Image.open(plst[0])
-    w = np.array(ima21).shape
-    print(w)
-    psave = "D:/选区模型"
-    plen = len(plst)
-    msize = [w[1] * plen / 2, w[0] / 2]
-    print(msize)
-    toImage = Image.new('RGBA', (int(msize[0]), int(msize[1])))
-    for i in range(plen):
-        fromImage = Image.open(plst[i])
-        fromImage = fromImage.resize((int(256 / 2), int(msize[1])), Image.ANTIALIAS)
-        toImage.paste(fromImage, (int(i * 256 / 2), 0))
+        for j in range(0, line_max):
+            pic_fole_head = Image.open(all_path[num])
+            width, height = pic_fole_head.size
 
-    # print(k[0])
-    sname = "/chengduMap02.png"
+            tmppic = pic_fole_head.resize((width_i, height_i))
 
-    toImage.save(psave + sname)
+            loc = (int(j % line_max * height_i),int((line_max-i+3) % line_max * width_i))
 
-    # im2.save(psave  + '/chengduMap.png')
-    # 还是应该循环两次
+            # print("第" + str(num) + "存放位置" + str(loc))
+            toImage.paste(tmppic, loc)
+            num = num + 1
 
+            if num >= len(all_path):
+                print("breadk")
+                break
 
-def resizeImg():
-    img = "D:/选区模型/chengduMap.png"
-    img2 = Image.open(img)
+        if num >= pic_max:
+            break
 
-    toImage = img2.resize((54 * 256, 56 * 256), Image.ANTIALIAS)
-    toImage.save("D:/选区模型/chengduMap01.png")
+    print(toImage.size)
+    toImage.save('D:\\picc\\merged.png')
+    print('瓦片拼接完毕')
 
 
-def knowImgInfo():
-    png = "D:/选区模型/testingComplie/cd_22568_6898.png"
-    bdimg = np.array(Image.open(png))  # 256*256
 
-    print(bdimg.shape)
+if __name__ == "__main__":
+    getTileByXYZ()
+    print('瓦片下载完毕')
 
-
-getTileByXYZ()
