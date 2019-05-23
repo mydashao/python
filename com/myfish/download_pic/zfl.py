@@ -6,9 +6,11 @@ import time
 import os
 from urllib.parse import quote
 import  string
+current_time = time.strftime("%Y_%m_%d", time.localtime(time.time()))
 
 LOG = "D:\PanDownload\PanData\pic\log.txt"
-keyword=('宇航员','麦苹果','VIP','Toxic','闫盼盼','尤蜜荟','蜜桃社','土肥圆','周妍希','乔依琳','小鸟酱','蕾丝兔','心妍','假面女皇','无忌影社','私人玩物','麻酥酥',
+keyword=('宇航员','麦苹果','VIP','Toxic','闫盼盼','尤蜜荟','蜜桃社',
+         '土肥圆','周妍希','乔依琳','小鸟酱','蕾丝兔','心妍','假面女皇','无忌影社','私人玩物','麻酥酥',
          '极品露出','李妍曦','若兮','完具少女','轰趴猫','易阳','松果','傲娇萌萌','玛鲁娜','徐cake')
 user_agent_list = [
     "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
