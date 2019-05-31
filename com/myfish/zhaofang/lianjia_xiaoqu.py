@@ -12,7 +12,7 @@ import pymysql
 
 import tablib
 import time
-
+exit = 0
 xiaoqu_chengjiao_sum = 0
 count=1
 chengjiao_count =1
@@ -27,12 +27,13 @@ user_agent_list = [
 "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.5; en-US; rv:1.9.2.15) Gecko/20110303 Firefox/3.6.15",
 ]
 
-dewaixuequ_=("madian1",'jiaodaokou','liupukang','deshengmen')
+dewaixuequ_=("madian1",'liupukang','deshengmen')
 zizhu_=("huixinxijie","hepingli","xibahe","anzhen1","guozhan1","taiyanggong","shaoyaoju","yayuncun", "yayuncunxiaoying")
+huilongguan_=("anzhen1",)
 
 # 筛选区县还是区域
-DIS_LIST = zizhu_
-EXCEL_NAME = 'zizhu_'
+DIS_LIST = huilongguan_
+EXCEL_NAME = 'huilongguan_'
 current_time = time.strftime("%Y_%m_%d", time.localtime(time.time()))
 house_number = 0
 
@@ -73,7 +74,7 @@ def xiaoqu_total_pages(url):
     browser.get(url)
     global house_number
     house_number = int(
-        browser.find_element_by_class_name('content').find_element_by_class_name('total').text[3:-3].strip())
+        browser.find_element_by_class_name('content').find_element_by_class_name('total').text[3:-6].strip())
     page_number= int(get_url(house_number))
     print('----共计'+str(house_number)+'个小区----')
     print('----共计'+str(page_number)+'页----')
@@ -92,7 +93,7 @@ def xiaoqu_info(dis, i):
     page_url = str(i + 1)
 
     detail_url = first_url + dis + middle_url + page_url
-
+    # detail_url = "https://bj.lianjia.com/xiaoqu/1111027377891/"
     print(detail_url)
     option = webdriver.ChromeOptions()
     option.add_argument('--headless')
@@ -109,7 +110,8 @@ def xiaoqu_info(dis, i):
         except:
             url = ''
         try:
-            id = 'c' + url[30:-1]
+                id = 'c' + url[30:-1]
+                id = "c1111027377891"
         except:
             id = None
 
@@ -131,15 +133,20 @@ def xiaoqu_info(dis, i):
         print('  简介 :' + id, title, diqu, chengqu)
         print('  价格 :' + junjia, chengjiao, zaishou)
 
+
         if 1==1:
             xiaoqu_list.append([id, url, title, dis, diqu, chengqu, chengjiao, junjia, zaishou])
             total_page = xiaoqu_total(id)
+            global exit
+            exit = 0
             # 循环查询每页信息
             for i in range(total_page):
                 # 循环查询小区列表中每个小区的成交记录
                 xiaoqu_chengjiao(title, id, i)
                 chengjiao_save_to_excel(id, chengjiao_list)
-                time.sleep(10)
+                time.sleep(5)
+                if exit >=10:
+                    break
 
             xiaoqu_save_to_excel(dis, xiaoqu_list)
 
@@ -181,9 +188,9 @@ def xiaoqu_chengjiao(title,id,i):
         except:
             url = ''
         try:
-            id = 'LJ' + url[33:-1]
+            Fid = 'LJ' + url[33:-5]
         except:
-            id = None
+            Fid = None
 
         title = item.find_element_by_class_name('title').text.strip()
 
@@ -202,17 +209,25 @@ def xiaoqu_chengjiao(title,id,i):
         except:
             chengjiao = ''
 
-
         lou = item.find_element_by_class_name('positionInfo').text.strip()
 
         fang = item.find_element_by_class_name('houseIcon').text.strip()
-        dealdate =item.find_element_by_class_name('dealDate').text.strip()
+        dealdate = item.find_element_by_class_name('dealDate').text.strip()
         global chengjiao_count
         global xiaoqu_chengjiao_sum
-        print('     ',chengjiao_count,xiaoqu_chengjiao_sum,title,address,guapai,chengjiao,fang,lou,dealdate)
-        chengjiao_count=chengjiao_count+1
-        xiaoqu_chengjiao_sum = xiaoqu_chengjiao_sum-1
-        chengjiao_list.append([id, url, title, address, guapai,chengjiao, fang, lou, dealdate])
+        print('     ', chengjiao_count, xiaoqu_chengjiao_sum, title, address, guapai, chengjiao, fang, lou, dealdate)
+        chengjiao_count = chengjiao_count + 1
+        xiaoqu_chengjiao_sum = xiaoqu_chengjiao_sum - 1
+        global exit
+        if Fid not in get_log():
+            chengjiao_list.append([Fid, url, title, address, guapai, chengjiao, fang, lou, dealdate])
+            save_log(Fid)
+            print(Fid, '新增', title)
+        else:
+            exit= exit + 1
+            print(Fid, '已存在', exit)
+        if exit >= 10:
+            break
 
 
 # 小区列表保存到excel
@@ -220,17 +235,37 @@ def xiaoqu_save_to_excel(dis, xiaoqu_list):
     headers = ('ID', 'url', '小区', '地区', '地区2', '城区', '成交', '均价', '在售')
     xiaoqu_list = tablib.Dataset(*xiaoqu_list, headers=headers)
 
-    with open('D:\Xiaoqu2_' + EXCEL_NAME + current_time + '.xlsx', 'wb') as f:
+    with open('D:\zhaofang\Xiaoqu_' + EXCEL_NAME + current_time + '.xlsx', 'wb') as f:
         f.write(xiaoqu_list.export('xlsx'))
 
 
 # 成交列表保存到excel
 def chengjiao_save_to_excel(dis, chengjiao_list):
-    headers = ('id', 'url', 'title', 'address', 'guapai', 'chengjiao','fang', 'lou', 'dealdate')
+    headers = ('Fid', 'url', 'title', 'address', 'guapai', 'chengjiao','fang', 'lou', 'dealdate')
     chengjiao_list = tablib.Dataset(*chengjiao_list, headers=headers)
 
-    with open('D:\chengjiao_' + EXCEL_NAME + current_time + '.xlsx', 'wb') as f:
+    with open('D:\zhaofang\chengjiao_' + EXCEL_NAME + current_time + '.xlsx', 'wb') as f:
         f.write(chengjiao_list.export('xlsx'))
+
+LOG = "D:\zhaofang\history.txt"
+
+# 保存日志
+def save_log(Fid):
+    # logger.debug('     开始保存cookie')
+
+    with open(LOG, 'a+') as f:
+        f.write(Fid+"\n")
+
+# 读取日志
+def get_log():
+    result=[]
+    # logger.debug('     开始读取cookie')
+    with open(LOG, 'r') as f:
+        for line in f:
+            result.append(line.strip('\n'))
+        return result
+
+
 
 
 if __name__ == "__main__":

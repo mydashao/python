@@ -8,10 +8,12 @@ from urllib.parse import quote
 import  string
 current_time = time.strftime("%Y_%m_%d", time.localtime(time.time()))
 
+domain = "https://tsd2h.com"
+
 LOG = "D:\PanDownload\PanData\pic\log.txt"
-keyword=('宇航员','麦苹果','VIP','Toxic','闫盼盼','尤蜜荟','蜜桃社',
+keyword=('宇航员','麦苹果','VIP','闫盼盼','尤蜜荟','蜜桃社','美昕','WANIMAL',
          '土肥圆','周妍希','乔依琳','小鸟酱','蕾丝兔','心妍','假面女皇','无忌影社','私人玩物','麻酥酥',
-         '极品露出','李妍曦','若兮','完具少女','轰趴猫','易阳','松果','傲娇萌萌','玛鲁娜','徐cake')
+         '极品露出','李妍曦','若兮','完具少女','轰趴猫','易阳','松果','傲娇萌萌','玛鲁娜','徐cake','Toxic')
 user_agent_list = [
     "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
     "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
@@ -73,7 +75,7 @@ def get_keyword(key,urls):
             flag = 1
             break
         else:
-            full_url = 'https://gcfl001.com' + topic_url
+            full_url = domain + topic_url
             print('    ',key,': ',title, '开始下载',full_url, end='')
             topic(title, full_url)
             save_log(topic_url)
@@ -143,7 +145,7 @@ def download(pic_src,title):
     print('\r', file_name, end='',flush=True)
 
     r = requests.get(pic_src)
-    path = "D:\\PanDownload\\PanData\\pic"+folder_name
+    path = "D:\\PanDownload\\PanData\\pic\\"+folder_name
     if os.path.exists(path) is False:
         os.makedirs(path)
 

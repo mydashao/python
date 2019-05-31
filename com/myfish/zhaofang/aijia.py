@@ -33,6 +33,14 @@ j3='l3'
 j4='l4'
 j5='l5'
 
+not_xicheng_list=("北环中心","德胜凯旋","马甸月季园","德胜置业","鼓楼外大街",
+                  "裕民路4号院","裕民路3号院","黄寺后身36号院","冠城南园",
+                  "裕民路1号院","北三环中路43号院","裕民东里","七省办",
+                  "北太平庄路2号院","马甸西路","京友公寓","玉兰园",
+                  "钟表北园","中航宿舍","冠城北园","电信宿舍","华尊大厦",
+                  '有研宿舍','凯德品元','月华轩','月季园甲7号','华展国际公寓',
+                  '科技部宿舍','鼓楼外大街1、3号楼','华龙大厦')
+
 #
 #
 # zizhu_=("anzhen","hepingli","xibahe",
@@ -346,6 +354,18 @@ def house_info(dis,i):
         fujia_score = diqu_score+ditie_score+VR_score+kanfang_score+taxfree_score
         score =float('%.2f' %((fujia_score+fangwu_score+lou_score)/6))
         rate_score = float('%.2f' % (score/int(danjia)*80000))
+        forbidden=''
+        if louceng == '顶层' and (zonggao == '7层' or zonggao == '6层'):
+            forbidden = '顶层'
+
+        if louceng == '地下室':
+            forbidden = '顶层'
+        if float(mianji) <= 65:
+            forbidden = '面积小'
+        # if int(niandai) <= 1974:
+        #     forbidden = '老楼'
+        if xiaoqu in not_xicheng_list:
+            forbidden = '外区'
 
         if id in get_log():
             flag = ''
@@ -366,7 +386,7 @@ def house_info(dis,i):
 
 
         mylist.append([id,score,rate_score,url, title, dis,diqu, xiaoqu, zongjia, danjia, huxing, mianji, chaoxiang, zhuangxiu,
-    dianti, louceng,zonggao, niandai, louxing, ditie, VR, taxfree, fabu, guanzhu,daikan,flag])
+    dianti, louceng,zonggao, niandai, louxing, ditie, VR, taxfree, fabu, guanzhu,daikan,forbidden,flag])
 
         count=count+1
 
@@ -378,12 +398,12 @@ def save_to_excel(dis,mylist):
 
     headers = (
     'ID','总分','性价比','url', '标题', '城区','地区',  '小区', '总价', '单价','户型', '面积', '朝向', '装修',
-    '电梯', '楼层','总楼层', '年代', '楼型', '地铁', 'VR', '满五', '发布', '关注量','带看量','新房')
+    '电梯', '楼层','总楼层', '年代', '楼型', '地铁', 'VR', '满五', '发布', '关注量','带看量','无效','新房')
     #print(mylist)
 
     mylist = tablib.Dataset(*mylist, headers=headers)
 
-    with open('D:\AJ_'+EXCEL_NAME+current_time+'.xlsx', 'wb') as f:
+    with open('D:\zhaofang\AJ_'+EXCEL_NAME+current_time+'.xlsx', 'wb') as f:
         f.write(mylist.export('xlsx'))
 
 

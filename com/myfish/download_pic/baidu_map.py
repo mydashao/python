@@ -19,10 +19,7 @@ path = "D:\\picc"
 
 def savePngByXYZ(url, x, y,z,title):
 
-    r = requests.get(url)
-    sname = "D:/选区模型/cd_{y}_{x}.png".format(x=x, y=y)
     file_name = title
-    # print(file_name)
 
     r = requests.get(url)
     path = "D:\\picc"
@@ -38,7 +35,7 @@ def getTileByXYZ():
     z = 19  # 成都[[22568,22678],[6897,7009]]
     # xidx = [22568,22580]
     # yidx = [6897,6910]
-    xidx = [101233, 101234]
+    xidx = [101202, 101234]
     yidx = [37742,37772]
     countx = xidx[1] - xidx[0]+1
     county = yidx[1] - yidx[0]+1
@@ -54,7 +51,7 @@ def getTileByXYZ():
                   "&scaler=1&udt=20190518".format(x=x, y=y)
             savePngByXYZ(url, x, y, 19,title)
             print(x,'*',y)
-        time.sleep(0)
+        time.sleep(3)
 
     merge(countx,county)
 
