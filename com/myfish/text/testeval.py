@@ -1,15 +1,9 @@
-import time,datetime
-int  = 1553285246
-timeArray = time.localtime(int)#1970秒数
-cookie_time= time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
-current_time = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()))
-print((int-time.time())//3600)
-print((int-time.time())%3600//60)
-
-
-print(current_time)
-print(cookie_time)
-
-
-
+from flask import json
+#
+# listee = ''
+# listee = eval({"subCodeMsg":"此券今日已经被抢完，请您明日再来~","subCode":"A14","code":"0","msg":null})
+# print(listee)
+dicts = ""
+strdict=json.loads(dicts)
+print(strdict)
 

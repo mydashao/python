@@ -106,18 +106,24 @@ def get_cookie():
         return cookie_list
 
 def if_time(start,end):
-    flag = 0
     start_time = datetime.datetime.strptime(str(datetime.datetime.now().date()) + start, '%Y-%m-%d%H:%M')
     end_time = datetime.datetime.strptime(str(datetime.datetime.now().date()) + end, '%Y-%m-%d%H:%M')
-    n_time = datetime.datetime.now()
-    if n_time < start_time:
-        flag = -1
-    elif n_time >= start_time and n_time < end_time:
-        flag = 0
-    else:
-        flag = 1
-
-    return flag
+    current_time = datetime.datetime.now()
+    # 如果未到时间
+    # if current_time < start_time:
+    #     flag = -1
+    #     flag = current_time - start_time
+    # # 如果到了时间
+    # elif current_time >= start_time and current_time < end_time:
+    #
+    #     flag = 0
+    # # 如果过了时间
+    # else:
+    #     flag = 1
+    # 计算当前与开始时间相差多少秒
+    interval = current_time - start_time
+    sec = interval.days * 24 * 3600 + interval.seconds
+    return sec
 
 def login():
     # 打开领券页面
@@ -135,7 +141,7 @@ def login():
             browser.add_cookie(cookie)
         # 利用已保存的cookie访问积分页面
         browser.get(login_url)
-        time.sleep(3)
+        # time.sleep(1)
     except FileNotFoundError:
         logger.debug('     cookie文件未找到')
 
@@ -158,25 +164,34 @@ def login():
     cookies = browser.get_cookies()
     # logger.debug('      这个是最新的cookies',cookies)
     save_cookie(cookies)
-    get_ticket(browser)
+    begin = '21:53'
+    end = '21:57'
+    name = '智能设备，888-666'
+    url = "https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&body=%7B%22activityId%22%3A%22368byKmXwznBuAzB59dUKsPsqpcY%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D0D46D6216C47799812D08243016C30A6F3B829B8055491ACC879AE44A78994C67E71EC00BE56F9C1BE40AD949D1C6C83_babel%2CroleId%3D3EF119C217F04E550F41047BEB79C3FD_babel%22%2C%22eid%22%3A%226HTBRM32KJCEPPYHNWWOWM47S3MZKRGILSHHCFTRGIHISGF5VKP3O6NXUKPJF76VV2CCRQ2SFE6B3C7DREQ7QSGJ4U%22%2C%22fp%22%3A%22edc3faef203541bcff5d9afa30e5873e%22%2C%22pageClick%22%3A%22Babel_Coupon%22%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=&area=&loginType=3&callback=jsonp4"
+    get_ticket(browser,begin,end,name,url)
 
-def get_ticket(browser):
+def get_ticket(browser,begin,end,name,url):
 
-
-    # count记录刷新次数， 每部分完成，end+1，五个部分结束 end=5 score记录总得分。
     while 1==1:
-        begin = '20:32'
-        end = '20:35'
-        if if_time(begin,end) ==0:
-            print('时间到了')
-            refresh(browser)
+        sec  = if_time(begin,end)
+        if sec <0:
 
-        elif if_time(begin,end) ==-1:
-            print('时间未到')
-            time.sleep(40)
+            for i in range (-1*sec-30):
+                print('\r' ,'时间未到，还差',-1*sec-i,'秒' , end='', flush=True)
+                time.sleep(1)
+            print('')
+            refresh(browser, name, url)
 
-        elif if_time(begin,end) ==1:
-            print('时间过了')
+        # if if_time(begin,end) >=0 and if_time(begin,end) <=180:
+        #     print('时间到了')
+        #     refresh(browser,name,url)
+
+        elif if_time(begin, end) >= 0 and if_time(begin, end) <= 180:
+            print('时间过了',if_time(begin, end),'秒')
+            refresh(browser, name, url)
+
+        elif if_time(begin,end) >180:
+            print('超过三分钟了')
             break
 
     logger.info('任务完成！！！')
@@ -185,22 +200,22 @@ def get_ticket(browser):
     logger.info('今天完成 %d 分，耗时 %d 分 %d 秒')
     logger.info('===============================')
 
-def refresh(browser):
-    print('refresh')
+def refresh(browser,name,url):
     browser.execute_script('window.open()')
     handles = browser.window_handles
     browser.switch_to.window(handles[-1])
-    time.sleep(5)
 
-    browser.get('https://item.jd.com/100002720639.html')
-    time.sleep(5)
-    for i in range(6000):
+    browser.get(url)
+    # time.sleep(1)
+    for i in range(10):
         browser.refresh()
-        print('refresh',i)
-        time.sleep(10)
+        print(name,'refresh',i)
+        info = browser.find_element_by_tag_name('pre').text
+        info = info[info.find("("):]
 
+        print(info)
 
-
+        time.sleep(1)
 
 # 主方法,如果变量__name__为主方法，执行下一步，
 # 如果被其他程序引用，变量__name__为本文件名（xxqg），！=__main__，不继续进行
