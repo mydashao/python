@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e96e99a-fc9a-4429-9d5b-3c7f7d195703" name="Default" comment="from home">
-      <change afterPath="$PROJECT_DIR$/wee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/myfish/text/testlock.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/myfish/buybuybuy/JD.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/myfish/buybuybuy/JD.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/myfish/scrapy/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/myfish/scrapy/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/myfish/text/test_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/myfish/text/test_tag.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/com/myfish/text/testeval.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/myfish/text/testeval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/myfish/text/textTimeDate.py" beforeDir="false" afterPath="$PROJECT_DIR$/com/myfish/text/textTimeDate.py" afterDir="false" />
     </list>
     <ignored path="Python.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,20 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/myfish/buybuybuy/JD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="101" column="19" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/com/myfish/text/testeval.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="315">
+              <caret line="210" column="47" selection-start-line="210" selection-start-column="47" selection-end-line="210" selection-end-column="47" />
+              <folding>
+                <element signature="e#76#89#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,8 +40,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/myfish/zhaofang/lianjia.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="119" column="9" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="9" />
+            <state relative-caret-position="-31">
+              <caret line="383" column="28" selection-start-line="383" selection-start-column="22" selection-end-line="383" selection-end-column="28" />
+              <folding>
+                <element signature="e#23#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/myfish/text/test_tag.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/myfish/text/testlock.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="22" column="16" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/myfish/text/testeval.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="28" selection-start-line="3" selection-end-line="3" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -56,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/myfish/BJEEA/xxqg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="164" column="30" selection-start-line="164" selection-start-column="26" selection-end-line="164" selection-end-column="30" />
+            <state relative-caret-position="3087">
+              <caret line="158" column="20" selection-start-line="158" selection-start-column="16" selection-end-line="158" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -96,6 +122,11 @@
       <find>find</find>
       <find>get</find>
       <find>读取cook</find>
+      <find>refresh</find>
+      <find>date</find>
+      <find>attr</find>
+      <find>refr</find>
+      <find>mt20</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,8 +175,10 @@
         <option value="$PROJECT_DIR$/com/myfish/zhaofang/lianjia_xiaoqu.py" />
         <option value="$PROJECT_DIR$/com/myfish/download_pic/zfl.py" />
         <option value="$PROJECT_DIR$/com/myfish/text/textTimeDate.py" />
-        <option value="$PROJECT_DIR$/com/myfish/buybuybuy/JD.py" />
         <option value="$PROJECT_DIR$/com/myfish/text/testeval.py" />
+        <option value="$PROJECT_DIR$/com/myfish/text/testlock.py" />
+        <option value="$PROJECT_DIR$/com/myfish/text/test_tag.py" />
+        <option value="$PROJECT_DIR$/com/myfish/buybuybuy/JD.py" />
       </list>
     </option>
   </component>
@@ -186,21 +219,14 @@
               <item name="python" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="myfish" type="462c0819:PsiDirectoryNode" />
-              <item name="buybuybuy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="myfish" type="462c0819:PsiDirectoryNode" />
-              <item name="download_pic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="myfish" type="462c0819:PsiDirectoryNode" />
               <item name="text" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="myfish" type="462c0819:PsiDirectoryNode" />
+              <item name="zhaofang" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -234,7 +260,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testeval">
+  <component name="RunManager" selected="Python.JD">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -275,27 +301,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="lianjia_xiaoqu" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish/zhaofang" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/zhaofang/lianjia_xiaoqu.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="testeval" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -309,6 +314,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/text/testeval.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testlock" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/myfish/text" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/myfish/text/testlock.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -360,19 +386,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.lianjia_xiaoqu" />
       <item itemvalue="Python.zfl" />
       <item itemvalue="Python.JD" />
       <item itemvalue="Python.textTimeDate" />
       <item itemvalue="Python.testeval" />
+      <item itemvalue="Python.testlock" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.testeval" />
         <item itemvalue="Python.JD" />
+        <item itemvalue="Python.testlock" />
+        <item itemvalue="Python.testeval" />
         <item itemvalue="Python.textTimeDate" />
         <item itemvalue="Python.zfl" />
-        <item itemvalue="Python.lianjia_xiaoqu" />
       </list>
     </recent_temporary>
   </component>
@@ -429,27 +455,43 @@
       <option name="project" value="LOCAL" />
       <updated>1559487787383</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="from home">
+      <created>1559570560754</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559570560754</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21722364" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.084190235" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899868" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3769124" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.1579602" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33379695" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32545203" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32962447" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.29624477" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.24617524" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32962447" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.29485396" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -474,14 +516,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="from home" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/com/myfish/movie/ajax/getWeibo.py" />
-    <entry file="file://$PROJECT_DIR$/com/myfish/basic/6.String/string.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/myfish/basic/5.Dictionary/eggs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -669,16 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/download_pic/zfl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/myfish/text/textTimeDate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -689,31 +713,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/BJEEA/xxqg.py">
+    <entry file="file://$PROJECT_DIR$/com/myfish/text/testlock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="164" column="30" selection-start-line="164" selection-start-column="26" selection-end-line="164" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/zhaofang/lianjia.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="119" column="9" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/myfish/buybuybuy/JD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="101" column="19" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="19" />
+        <state relative-caret-position="441">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/myfish/text/testeval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="63">
+          <caret line="3" column="28" selection-start-line="3" selection-end-line="3" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/BJEEA/xxqg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3087">
+          <caret line="158" column="20" selection-start-line="158" selection-start-column="16" selection-end-line="158" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/download_pic/zfl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/text/test_tag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/zhaofang/lianjia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31">
+          <caret line="383" column="28" selection-start-line="383" selection-start-column="22" selection-end-line="383" selection-end-column="28" />
+          <folding>
+            <element signature="e#23#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/myfish/buybuybuy/JD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="210" column="47" selection-start-line="210" selection-start-column="47" selection-end-line="210" selection-end-column="47" />
+          <folding>
+            <element signature="e#76#89#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -15,22 +15,22 @@ text='''
     </div>
 '''
 print('XPath测试')
-# html =etree.HTML(text)
-# # 标签对象获取
-# result0=html.xpath('//div[@class="div2_1"]')
-# # 父节点获取
-# result1=html.xpath('//h4/../@class')
-# # 子孙节点获取
-# result2=html.xpath('//div[@class="div1_1"]//@class')
-# # 标签文本获取
-# result3=html.xpath('//div[@class="div2_1"]/h2/text()')
-# # 标签属性获取
-# result4=html.xpath('//div[@class="div2_2"]/a/img/@src')
-# # 属性多值匹配
-# result5=html.xpath('//h4[@class="h4 pic"]/text()')
-# result6=html.xpath('//h4[contains(@class,"h4")]/text()')
-# # 多属性匹配
-# result7=html.xpath('//h4[@id="otherH4" and contains(@class,"h4")]/text()')
+html =etree.HTML(text)
+# 标签对象获取
+result0=html.xpath('//div[@class="div2_1"]')
+# 父节点获取
+result1=html.xpath('//h4/../@class')
+# 子孙节点获取
+result2=html.xpath('//div[@class="div1_1"]//@class')
+# 标签文本获取
+result3=html.xpath('//div[@class="div2_1"]/h2/text()')
+# 标签属性获取
+result4=html.xpath('//div[@class="div2_2"]/a/img/@src')
+# 属性多值匹配
+result5=html.xpath('//h4[@class="h4 pic"]/text()')
+result6=html.xpath('//h4[contains(@class,"h4")]/text()')
+# 多属性匹配
+result7=html.xpath('//h4[@id="otherH4" and contains(@class,"h4")]/text()')
 
 # print('     标签对象获取：',result0)
 # print('     父节点获取  ：',result1)
