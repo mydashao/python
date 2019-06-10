@@ -74,6 +74,7 @@ def main():
     ticket(browser)
     # 导出订单
     # order_list(browser)
+    # ticket_old(browser)
 
 
 def get_time(sec):
@@ -89,22 +90,22 @@ def get_time(sec):
 
 # 保存扫码后的cookie在COOKIE_FILE
 def save_cookie(cookies):
-    print(' ', datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '开始保存cookie')
-    time.sleep(1)
+    print(' ', str(datetime.datetime.now())[:-3], '开始保存cookie')
+    time.sleep(0.5)
     with open(COOKIE_FILE, 'w') as f:
         f.write(str(cookies))
-        print(' ', datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '保存cookie成功')
-    time.sleep(1)
+        print(' ', str(datetime.datetime.now())[:-3], '保存cookie成功')
+    time.sleep(0.5)
 
 
 # 获取程序保存在COOKIE_FILE中的cookie
 def get_cookie():
-    print(' ', datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),'开始读取cookie')
+    print(' ', str(datetime.datetime.now())[:-3],'开始读取cookie')
     time.sleep(1)
     with open(COOKIE_FILE, 'r') as f:
         cookies= f.read()
         cookie_list = eval(cookies)
-        print(' ', datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '读取cookie成功')
+        print(' ', str(datetime.datetime.now())[:-3], '读取cookie成功')
         # print(cookie_list)
         time.sleep(1)
         return cookie_list
@@ -136,8 +137,8 @@ def login():
         browser.get(login_url)
         # time.sleep(1)
     except :
-        print(' ',datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),'cookie文件未找到')
-        print(' ',datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),'请在60秒内扫码')
+        print(' ',str(datetime.datetime.now())[:-3],'cookie文件未找到')
+        print(' ',str(datetime.datetime.now())[:-3],'请在60秒内扫码')
 
     # 如cookie过期，扫码登陆，如果出现提示框，关闭然后跳转到扫码界面
 
@@ -156,22 +157,56 @@ def login():
     save_cookie(cookies)
     return browser
 
+begin_list = [1,2,3,4,5,6,7]
+
+
+def ticket_old(browser):
+    threads = []
+
+    for i in range(len(begin_list)):
+        threads.append(threading.Thread(target=refresh_old, args=(browser,begin_list[i])))
+
+    for t in threads:
+        # t.setDaemon(True)
+        t.start()
+
+
+def refresh_old(browser,chrome):
+    # browser = webdriver.Chrome()
+
+    for i in range(4):
+        browser.execute_script('window.open()')
+        print(chrome,'打开第',i+1,'个页面')
+        time.sleep(1)
+
+    handles = browser.window_handles
+    url = 'https://coupon.jd.com/ilink/couponActiveFront/front_index.action?key=265db24ca1534198aa79c68b4aa15721&roleId=20316886&to=//mall.jd.com/index-1000132921.html'
+    for times in range(100):
+        for j in range(len(handles)):
+            browser.switch_to.window(handles[j])
+            browser.get(url)
+            print(str(datetime.datetime.now())[:-3],'第',chrome,'个浏览器打开第',j+1,'个页面刷新第',times+1, '次')
+            time.sleep(1)
+
+
+
 def ticket(browser):
     u1 = "https://pro.jd.com/mall/active/368byKmXwznBuAzB59dUKsPsqpcY/index.html?extension_id=eyJhZCI6IiIsImNoIjoiIiwic2hvcCI6IiIsInNrdSI6IiIsInRzIjoiIiwidW5pcWlkIjoie1wiY2xpY2tfaWRcIjpcIjM5MTk3OTE2LTU0MDYtNDBkOS1iZGQ1LTVmNjVjY2EwNDNiMlwiLFwibWF0ZXJpYWxfaWRcIjpcIjQ5MDgyNzEzNVwiLFwicG9zX2lkXCI6XCI0Mjc1XCIsXCJzaWRcIjpcImZhNTczZTJjLWZiYzYtNDNhNy05ZGQ1LWIwMmNmMWUwMzI0ZFwifSJ9&jd_pop=39197916-5406-40d9-bdd5-5f65cca043b2&abt=1"
-    url1 = "https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&body=%7B%22activityId%22%3A%22368byKmXwznBuAzB59dUKsPsqpcY%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D0D46D6216C47799812D08243016C30A6F3B829B8055491ACC879AE44A78994C67E71EC00BE56F9C1BE40AD949D1C6C83_babel%2CroleId%3D3EF119C217F04E550F41047BEB79C3FD_babel%22%2C%22eid%22%3A%22SPKSYS2J4DUUCUAKKN63BR5RIIPPMJU6S6TQBJEOI7BBCJRPUTZDW5HNYB3JAQUL3P2QAXKP6JJ6F5SZ7SQUAISINQ%22%2C%22fp%22%3A%22d844de2da4d30435798ce566949038cc%22%2C%22pageClick%22%3A%22Babel_Coupon%22%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=&area=&loginType=3&callback=jsonp5"
+    url1 = "https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&body=%7B%22activityId%22%3A%22nKxVyPnuLwAsQSTfidZ9z4RKVZy%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D0D46D6216C47799812D08243016C30A6F3B829B8055491ACC879AE44A78994C67E71EC00BE56F9C1BE40AD949D1C6C83_babel%2CroleId%3D3EF119C217F04E550F41047BEB79C3FD_babel%22%2C%22eid%22%3A%226HTBRM32KJCEPPYHNWWOWM47S3MZKRGILSHHCFTRGIHISGF5VKP3O6NXUKPJF76VV2CCRQ2SFE6B3C7DREQ7QSGJ4U%22%2C%22fp%22%3A%22edc3faef203541bcff5d9afa30e5873e%22%2C%22pageClick%22%3A%22Babel_Coupon%22%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=&area=&loginType=3&callback=jsonp4"
     url2 = "https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&body=%7B%22activityId%22%3A%222ofPiFrjCtNG2GEaGDvTqc3UvgKN%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3DB70CC134F6907D201EDD869AAED55CC079278C091F9E647F6B33E7AA1AA3DA70816ED7A244402C71D22165F6EA620D15_babel%2CroleId%3D4420606CB4D535D92F4B3506F4678814_babel%22%2C%22eid%22%3A%226HTBRM32KJCEPPYHNWWOWM47S3MZKRGILSHHCFTRGIHISGF5VKP3O6NXUKPJF76VV2CCRQ2SFE6B3C7DREQ7QSGJ4U%22%2C%22fp%22%3A%22edc3faef203541bcff5d9afa30e5873e%22%2C%22pageClick%22%3A%22Babel_Coupon%22%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=&area=&loginType=3&callback=jsonp1"
-    url3 = "https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&body=%7B%22activityId%22%3A%22368byKmXwznBuAzB59dUKsPsqpcY%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D0D46D6216C47799812D08243016C30A6F3B829B8055491ACC879AE44A78994C67E71EC00BE56F9C1BE40AD949D1C6C83_babel%2CroleId%3D3EF119C217F04E550F41047BEB79C3FD_babel%22%2C%22eid%22%3A%22SPKSYS2J4DUUCUAKKN63BR5RIIPPMJU6S6TQBJEOI7BBCJRPUTZDW5HNYB3JAQUL3P2QAXKP6JJ6F5SZ7SQUAISINQ%22%2C%22fp%22%3A%22d844de2da4d30435798ce566949038cc%22%2C%22pageClick%22%3A%22Babel_Coupon%22%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=&area=&loginType=3&callback=jsonp2"
+    url3 = "https://coupon.jd.com/ilink/couponActiveFront/front_index.action?key=265db24ca1534198aa79c68b4aa15721&roleId=20316886&to=//mall.jd.com/index-1000132921.html"
     url4 = "https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&body=%7B%22activityId%22%3A%22378jVWoR2PmtVp9gtXAGySL82YTy%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D4FAF8BA685D85534EC53A86A83B734D4F2801639C53FB1B3095F12EF7F6BD9B5F320BAC296C1506B3F80B14F8CF40B83_babel%2CroleId%3D009D524844052C3B4A455FA36AD70673_babel%22%2C%22eid%22%3A%22SPKSYS2J4DUUCUAKKN63BR5RIIPPMJU6S6TQBJEOI7BBCJRPUTZDW5HNYB3JAQUL3P2QAXKP6JJ6F5SZ7SQUAISINQ%22%2C%22fp%22%3A%22d844de2da4d30435798ce566949038cc%22%2C%22pageClick%22%3A%22Babel_Coupon%22%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=&area=&loginType=3&callback=jsonp4"
     url5 = "https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&body=%7B%22activityId%22%3A%22378jVWoR2PmtVp9gtXAGySL82YTy%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D4FAF8BA685D85534EC53A86A83B734D4F2801639C53FB1B3095F12EF7F6BD9B5F320BAC296C1506B3F80B14F8CF40B83_babel%2CroleId%3D009D524844052C3B4A455FA36AD70673_babel%22%2C%22eid%22%3A%22SPKSYS2J4DUUCUAKKN63BR5RIIPPMJU6S6TQBJEOI7BBCJRPUTZDW5HNYB3JAQUL3P2QAXKP6JJ6F5SZ7SQUAISINQ%22%2C%22fp%22%3A%22d844de2da4d30435798ce566949038cc%22%2C%22pageClick%22%3A%22Babel_Coupon%22%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=&area=&loginType=3&callback=jsonp4"
 
-    begin_list = ["23:59:47", "23:59:45", "23:59:43", "23:59:41", "23:59:39", "23:59:37", "23:59:35"]
+    begin_list = ["23:59:47", "23:59:45", "23:59:43", "23:59:41",
+                  "23:59:39", "23:59:37", "23:59:35"]
 
     # begin_list = ["23:59:10", "23:59:45", "23:59:43", "23:59:39", "23:59:36", "23:59:40", "23:59:47"]
     name_list = ["1【888-666网络】", "2【888-666网络】", "3【888-666网络】", "4【888-666网络】",
                  "5【888-666网络】", "6【888-666网络】", "7【888-666网络】"]
-    name_list = ["1【888-666网络】", "2【618-300手表】", "3【888-666网络】", "4【618-300手表】",
-                 "5【888-666网络】", "6【618-300手表】",  "7【888-666网络】"]
-    url_list = [url1, url2, url1, url2, url1, url2, url1]
+    name_list = ["1【618-300手表】", "2【199-100外设】", "3【199-100外设】", "4【199-100外设】",
+                 "5【618-300手表】", "6【199-100外设】",  "7【618-300手表】"]
+    url_list = [url1, url1, url1, url1, url1, url1, url1]
     color = ['33', '32', '36', '34', '35', '37', '31']
 
     # get_ticket(browser,begin_list,name_list,url_list)
@@ -198,24 +233,23 @@ def get_ticket(browser,begin,name,url,color,lock):
 
         sec = if_time(begin)
         if sec<-100 and sec>-85800:
-            print(start_line,datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),name, '时间未到，还差', -1 * sec, '秒',end_line)
+            print(start_line,str(datetime.datetime.now())[:-3],name, '时间未到，还差', -1 * sec, '秒',end_line)
             time.sleep(min(-1 * sec / 2, 900))
 
         elif -100<=sec <0:
             for j in range (-1*sec-30):
-                print(start_line,datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),name,'时间未到，还差',-1*sec-j,'秒',end_line)
-                # print(datetime.datetime.now(),name,'时间未到，还差',-1*sec-j,'秒' )
+                print(start_line,str(datetime.datetime.now())[:-3],name,'时间未到，还差',-1*sec-j,'秒',end_line)
                 time.sleep(1)
             END = refresh(browser, name, url,color,lock)
 
         elif (sec >= 0 and sec <= 300) or sec<=-85800 :
 
-            print(start_line,datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),name,'时间过了',sec,'秒',end_line)
+            print(start_line,str(datetime.datetime.now())[:-3],name,'时间过了',sec,'秒',end_line)
             END= refresh(browser, name, url,color,lock)
 
         elif sec >300:
 
-            print(start_line,datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),name,'超过五分钟了,退出',end_line)
+            print(start_line,str(datetime.datetime.now())[:-3],name,'超过五分钟了,退出',end_line)
             END = 1
             # break
 
@@ -227,20 +261,18 @@ def refresh(browser,name,url,color,lock):
     handles = browser.window_handles
     browser.switch_to.window(handles[-1])
     browser.get(url)
-    # time.sleep(1)
-    for i in range(600):
+    for i in range(1000):
             lock.acquire()
             browser.get(url)
-            print(" ",datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),name,'刷新',i,'次')
+            print(" ",str(datetime.datetime.now())[:-3],name,'刷新',i,'次')
             try:
                 info_raw = browser.find_element_by_tag_name('pre').text
             except:
                 browser.refresh()
-                time.sleep(0.5)
                 try:
                     info_raw = browser.find_element_by_tag_name('pre').text
                 except:
-                    info_raw = browser.find_element_by_tag_name('pre').text
+                    info_raw = 'jsonp5({"subCodeMsg":"重复~~很抱歉，没抢到~~","subCode":"A28","code":"0","msg":null})'
 
             info_format = info_raw[info_raw.find("{"):-1].replace('null', '"null"')
             lock.release()
@@ -255,14 +287,17 @@ def refresh(browser,name,url,color,lock):
             except:
                 code = "A00"
 
-            if code == "A15" :
-                logger.info(name+"：此券已经被抢完了，下次记得早点来哟~")
-                return 1
-                break
+            if code == "A28" :
+                print(name+"：很抱歉，没抢到~~")
             elif code == "A14":
                 logger.info(name+"：此券今日已经被抢完，请您明日再来~")
                 # return 1
                 # break
+            elif code == "A15" :
+                logger.info(name+"：此券已经被抢完了，下次记得早点来哟~")
+                return 1
+                break
+
             elif code == "A13":
                 logger.info(name+"：您今天已经参加过此活动，别太贪心哟，明天再来~")
                 return 1
@@ -275,19 +310,20 @@ def refresh(browser,name,url,color,lock):
                 logger.info(name + "：您已经参加过此活动，别太贪心哟，下次再来~")
                 return 1
                 break
+            elif code =='D2':
+                logger.info(name + "：本时段优惠券已抢完，请14:00再来吧！")
 
             elif code == "A1":
-                logger.info(name+ "：领取成功！感谢您的参与，祝您购物愉快~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+                logger.info(name + "：领取成功！感谢您的参与，祝您购物愉快~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 return 1
                 break
             else:
-                print(" ",datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), name,code, msg)
+                print(" ",str(datetime.datetime.now())[:-3], name,code, msg)
             # time.sleep
 
+# 爬取用户优惠券信息
 def ticket_list(browser,url):
     browser.get(url)
-    # print(browser.page_source)
-
     list = browser.find_elements_by_class_name('coupon-item-d')
     for item in list:
         ticket_type =item.find_element_by_class_name('c-type').find_element_by_class_name('c-price').find_element_by_class_name('type').text.strip()
