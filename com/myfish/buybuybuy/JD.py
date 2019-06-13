@@ -71,9 +71,9 @@ def main():
     # 导出优惠券
     # ticket_list(browser,ticket_url)
     # 刷优惠券
-    ticket(browser)
+    # ticket(browser)
     # 导出订单
-    # order_list(browser)
+    order_list(browser)
     # ticket_old(browser)
 
 
@@ -157,11 +157,11 @@ def login():
     save_cookie(cookies)
     return browser
 
-begin_list = [1,2,3,4,5,6,7]
 
 
 def ticket_old(browser):
     threads = []
+    begin_list = [1, 2, 3, 4, 5, 6, 7]
 
     for i in range(len(begin_list)):
         threads.append(threading.Thread(target=refresh_old, args=(browser,begin_list[i])))
@@ -199,15 +199,20 @@ def ticket(browser):
     url5 = "https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&body=%7B%22activityId%22%3A%22378jVWoR2PmtVp9gtXAGySL82YTy%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D4FAF8BA685D85534EC53A86A83B734D4F2801639C53FB1B3095F12EF7F6BD9B5F320BAC296C1506B3F80B14F8CF40B83_babel%2CroleId%3D009D524844052C3B4A455FA36AD70673_babel%22%2C%22eid%22%3A%22SPKSYS2J4DUUCUAKKN63BR5RIIPPMJU6S6TQBJEOI7BBCJRPUTZDW5HNYB3JAQUL3P2QAXKP6JJ6F5SZ7SQUAISINQ%22%2C%22fp%22%3A%22d844de2da4d30435798ce566949038cc%22%2C%22pageClick%22%3A%22Babel_Coupon%22%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=&area=&loginType=3&callback=jsonp4"
 
     begin_list = ["23:59:47", "23:59:45", "23:59:43", "23:59:41",
-                  "23:59:39", "23:59:37", "23:59:35"]
+                  "23:59:39", "23:59:37", "23:59:35", "23:59:34",
+                  "23:59:33", "23:59:32", "23:59:31", "23:59:36",
+                  "23:59:38", "23:59:46", "23:59:44", "23:59:42"]
 
     # begin_list = ["23:59:10", "23:59:45", "23:59:43", "23:59:39", "23:59:36", "23:59:40", "23:59:47"]
     name_list = ["1【888-666网络】", "2【888-666网络】", "3【888-666网络】", "4【888-666网络】",
-                 "5【888-666网络】", "6【888-666网络】", "7【888-666网络】"]
-    name_list = ["1【618-300手表】", "2【199-100外设】", "3【199-100外设】", "4【199-100外设】",
-                 "5【618-300手表】", "6【199-100外设】",  "7【618-300手表】"]
-    url_list = [url1, url1, url1, url1, url1, url1, url1]
-    color = ['33', '32', '36', '34', '35', '37', '31']
+                 "5【888-666网络】", "6【888-666网络】", "7【888-666网络】", "1【618-300手表】",
+                 "2【199-100外设】", "3【199-100外设】", "4【199-100外设】", "4【199-100外设】",
+                 "5【618-300手表】", "6【199-100外设】", "7【618-300手表】", "4【199-100外设】"]
+    url_list = [url1, url1, url1, url1, url1, url1, url1,url1,
+                url1, url1, url1, url1, url1, url1, url1, url1]
+    color = ['33', '32', '36', '34', '35', '37', '31',
+             '33', '32', '36', '34', '35', '37', '31',
+             '33', '32']
 
     # get_ticket(browser,begin_list,name_list,url_list)
 
@@ -221,7 +226,7 @@ def ticket(browser):
     for t in threads:
         # t.setDaemon(True)
         t.start()
-        time.sleep(3.27)
+        time.sleep(1.27)
 
 def get_ticket(browser,begin,name,url,color,lock):
 
