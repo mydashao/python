@@ -71,9 +71,9 @@ def main():
     # 导出优惠券
     # ticket_list(browser,ticket_url)
     # 刷优惠券
-    # ticket(browser)
+    ticket(browser)
     # 导出订单
-    order_list(browser)
+    # ?order_list(browser)
     # ticket_old(browser)
 
 
@@ -407,7 +407,7 @@ def order_list(browser):
                     good_number = len(order_goods)
                     for i in range(good_number):
                         order_name = order_goods[i].text
-                        order_number = order_numbers[i].text
+                        order_number = order_numbers[i].text[1:]
 
 
 
@@ -421,8 +421,7 @@ def order_list(browser):
                         # 订单多件商品
                         else :
                             print( order_time,order_id,  order_name, order_number, ' ', ' ',' ', ' ')
-                            mylist.append(['', order_name, order_number,
-                                           ' ', ' ',' ', ' ', ' '])
+                            mylist.append(['', order_name, order_number,' ', ' ',' ', ' ', order_status])
                         good_number = good_number -10
                 # 拆分订单
                 else:
@@ -433,16 +432,16 @@ def order_list(browser):
                     except:
                         order_status = ''
                     order_separate = item.find_element_by_class_name('ftx-13').text
-                    order_pay =  item.find_element_by_class_name('order-pay').text[7:]
+                    order_pay =  item.find_element_by_class_name('order-pay').text[6:]
                     order_consignee = item.find_element_by_class_name('order-consignee').text[4:]
                     order_price =  item.find_element_by_class_name('order-count').text[6:]
-                    print(order_time,order_id, order_separate,'',order_price,order_consignee,order_pay,order_status)
+                    print(order_time,order_id, order_separate,'1',order_price,order_consignee,order_pay,order_status)
 
                     if order_time == last_order_time:
-                        mylist.append([order_id, order_separate, '', order_price,
-                                       order_consignee, '', order_pay, order_status])
+                        mylist.append([order_id, order_separate, '1', order_price,
+                                       order_consignee, order_time, order_pay, order_status])
                     else :
-                        mylist.append([order_id, order_separate,'',order_price,
+                        mylist.append([order_id, order_separate,'1',order_price,
                                    order_consignee,order_time,order_pay,order_status])
 
                 try:
