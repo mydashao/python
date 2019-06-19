@@ -123,6 +123,84 @@ def login():
     save_cookie(cookies)
     return browser
 
+def order_number(browser):
+    year_list=['2019','2018','2017','2016','2015','2014','3']
+    front_url = 'https://order.jd.com/center/list.action?search=0&d='
+    last_url = '&s=4096&page='
+    browser.execute_script('window.open()')
+    handles = browser.window_handles
+    browser.switch_to.window(handles[-1])
+
+    for i in range(len(year_list)):
+        page_number = 0
+
+        next_page = '下一页'
+
+        while next_page == '下一页':
+            page_number = page_number + 1
+
+            url = front_url + year_list[i] + last_url + str(page_number)
+
+            print(url)
+            browser.get(url)
+            # print(browser.page_source)
+            time.sleep(1)
+
+            list = browser.find_elements_by_tag_name("tbody")
+            for item in list:
+                order_time = item.find_element_by_class_name('dealtime').text
+                try:
+                    order_status = item.find_element_by_class_name('order-status').text
+                except:
+                    order_status = ''
+                order_id = item.find_element_by_class_name('number').find_element_by_tag_name('a').text
+
+                try:
+                    order_type = item.find_element_by_class_name('number').find_element_by_tag_name('a').get_attribute(
+                        'name')
+                except:
+                    order_type = item.find_element_by_class_name('number').find_element_by_tag_name('a').get_attribute(
+                        'href')
+                if order_type == 'orderIdLinks':
+                    # 一个多商品订单中，有多个商品名称和商品数量
+                    order_goods = item.find_elements_by_class_name('p-name')
+
+                    # order_address = item.find_element_by_class_name('consignee').find_element_by_class_name('prompt-01').find_element_by_class_name('pc').find_element_by_tag_name('p').text.strip()
+                    order_consignee = item.find_element_by_class_name('consignee').text
+                    good_number = len(order_goods)
+
+                    print(order_id, '', order_time, order_status)
+
+
+                    mylist.append([order_id, '', order_time, order_status])
+
+
+                # 拆分订单
+                else:
+                    order_time = item.find_element_by_class_name('dealtime').text
+                    last_order_time = order_time
+                    try:
+                        order_status = item.find_element_by_class_name('order-status').text[5:]
+                    except:
+                        order_status = ''
+                    order_separate = item.find_element_by_class_name('ftx-13').text
+                    print(order_id, order_separate,  order_time, order_status)
+
+
+                    mylist.append([order_id, order_separate, order_time, order_status])
+
+                try:
+                    next_page = browser.find_element_by_class_name("mt20").find_element_by_class_name(
+                        "pagin").find_element_by_xpath('//a[@class="next"]').text
+
+                except:
+                    # next_page = browser.find_element_by_class_name("mt20").find_element_by_class_name("pagin").find_element_by_tag_name('next-disabled').text
+                    next_page = 'disable'
+            headers = (
+                '订单编号', '商品', '数量', '总价', '收货人', '时间', '付款方式', '状态')
+            dict = 'D:\JD\order_list_'
+            save_to_excel(headers, mylist, dict)
+
 
 def order_list(browser):
     year_list=['2019','2018','2017','2016','2015','2014','3']
@@ -178,8 +256,6 @@ def order_list(browser):
                     for k in range(good_number):
                         order_name = order_goods[k].text
                         order_number = order_numbers[k].text[1:]
-
-
 
                     # for order_good in order_goods:
                     #     order_name = order_good.text
