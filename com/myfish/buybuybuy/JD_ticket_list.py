@@ -45,82 +45,27 @@ user_agent_list = [
     "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.5; en-US; rv:1.9.2.15) Gecko/20110303 Firefox/3.6.15",
     ]
 
-logger = logging.getLogger('mylogger')
-logger.setLevel(logging.DEBUG)
-# 将日志消息发送到输出到Stream，如std.out, std.err或任何file-like对象。
-console_handler = logging.StreamHandler(sys.stderr)
-# 设置handler将会处理的日志消息的最低严重级别
-console_handler.setLevel(logging.DEBUG)
-# 设置消息格式，日期格式等
-format = logging.Formatter(fmt="%(asctime)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
-console_handler.setFormatter(format)
-
-# 将日志消息发送到磁盘文件，默认情况下文件大小会无限增长
-file_handler = logging.FileHandler('D:\JD\qg.log')
-file_handler.setLevel(logging.INFO)
-file_handler.setFormatter(format)
-
-logger.addHandler(console_handler)
-logger.addHandler(file_handler)
 ticket_url = "https://quan.jd.com/user_quan.action"
 
-begin_list = [
-    "https://coupon.jd.com/ilink/couponSendFront/send_index.action?key=334e7b60f21242769ecfb89fac91ddde&roleId=20743598&to=shengdaoyd.jd.com",
-    "https://coupon.jd.com/ilink/couponSendFront/send_index.action?key=334e7b60f21242769ecfb89fac91ddde&roleId=20743598&to=shengdaoyd.jd.com",
-    "https://coupon.jd.com/ilink/couponSendFront/send_index.action?key=334e7b60f21242769ecfb89fac91ddde&roleId=20743598&to=shengdaoyd.jd.com",
-    "https://coupon.jd.com/ilink/couponSendFront/send_index.action?key=334e7b60f21242769ecfb89fac91ddde&roleId=20743598&to=shengdaoyd.jd.com",
-    "https://coupon.jd.com/ilink/couponSendFront/send_index.action?key=334e7b60f21242769ecfb89fac91ddde&roleId=20743598&to=shengdaoyd.jd.com",
-    "https://coupon.jd.com/ilink/couponSendFront/send_index.action?key=334e7b60f21242769ecfb89fac91ddde&roleId=20743598&to=shengdaoyd.jd.com"
-
-]
-
-def if_time(start):
-    start_time = datetime.datetime.strptime(str(datetime.datetime.now().date()) + start, '%Y-%m-%d%H:%M:%S')
-    current_time = datetime.datetime.now()
-
-    interval = current_time - start_time
-    sec = interval.days * 24 * 3600 + interval.seconds
-    return sec
-
 def main():
-    END = 0
-
-    while END!=1:
-
-        sec = if_time("19:59:00")
-        if sec < -100 and sec > -85800:
-            print( str(datetime.datetime.now())[:-3],  '时间未到，还差', -1 * sec, '秒' )
-            time.sleep(min(-1 * sec / 2, 900))
-
-        elif -100 <= sec < 0:
-            for j in range(-1 * sec - 30):
-                print(str(datetime.datetime.now())[:-3], '时间未到，还差', -1 * sec - j, '秒')
-                time.sleep(1)
-            old(begin_list)
-
-
-        elif (sec >= 0 and sec <= 300) or sec <= -85800:
-
-            print( str(datetime.datetime.now())[:-3], '时间过了', sec, '秒')
-            old(begin_list)
-
-
-        elif sec > 300:
-
-            print( str(datetime.datetime.now())[:-3],  '超过五分钟了,退出')
-            END =1
-
-
-
-
-def old(begin_list):
-    logger.info('=============================================')
-    logger.info('程序开始运行!')
+    print('=============================================')
+    print('程序开始运行!')
     browser = login()
 
-    refresh_old(browser,begin_list)
+    ticket_list(browser,ticket_url)
 
 
+
+def get_time(sec):
+    timeArray = time.localtime(sec)  # 1970秒数
+    cookie_time = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
+    rest_hour = (sec - time.time()) // 3600
+    rest_minute = (sec - time.time()) % 3600 // 60
+    print('     cookie当前时间：%s',current_time)
+    time.sleep(1)
+    print('     cookie过期时间：%s',cookie_time)
+    time.sleep(1)
+    print('      距离cookie过期还剩',rest_hour,'小时',rest_minute,'分')
 
 # 保存扫码后的cookie在COOKIE_FILE
 def save_cookie(cookies):
@@ -181,7 +126,7 @@ def login():
     try:
         WebDriverWait(browser, 60, 0.5).until(EC.title_is('我的京东--我的订单'))
     except:
-        logger.debug('     没有人扫码啊，我走了')
+        print('     没有人扫码啊，我走了')
         browser.quit()
         return
 
@@ -191,19 +136,41 @@ def login():
     save_cookie(cookies)
     return browser
 
+# 爬取用户优惠券信息
+def ticket_list(browser,url):
+    browser.get(url)
+    list = browser.find_elements_by_class_name('coupon-item-d')
+    for item in list:
+        ticket_type =item.find_element_by_class_name('c-type').find_element_by_class_name('c-price').find_element_by_class_name('type').text.strip()
+        price = item.find_element_by_class_name('c-type').find_element_by_class_name('c-price').find_element_by_tag_name('strong').text.strip()
+        limit = item.find_element_by_class_name('c-type').find_element_by_class_name('c-limit').text.strip()[1:-2]
+        use_time = item.find_element_by_class_name('c-type').find_element_by_class_name('c-time').text.strip()
+        tips = item.find_element_by_class_name('c-msg').find_element_by_class_name('c-range').find_element_by_class_name('range-item').find_element_by_class_name('txt').text.strip()
+        # use_time = item.find_element_by_class_name('c-msg').find_element_by_class_name('c-range').find_element_by_class_name('range-item').find_element_by_class_name('txt').text.strip()
+        lenth = 30-len(tips)
+        space = ''
+        for i in range(lenth):
+            space =space+' '
+        print(ticket_type,'-',tips,space,limit,'-',price)
+    try:
+        next = browser.find_element_by_class_name('ui-page-wrap').find_element_by_class_name('ui-page').find_element_by_class_name('ui-pager-next').text[0:3]
+        # print(next)
+        if next =='下一页':
+            next_page =browser.find_element_by_class_name('ui-page-wrap').find_element_by_class_name('ui-page').find_element_by_class_name('ui-pager-next').get_attribute('href')
+            # next_page = "https://quan.jd.com/"+next_page
+            # print(next_page)
+            ticket_list(browser,next_page)
+    except:
+        print("没有了")
+        return
 
+def save_to_excel(headers,mylist,dict):
 
+    #print(mylist)
+    mylist = tablib.Dataset(*mylist, headers=headers)
 
-
-
-def refresh_old(browser,chrome):
-
-    for i in range(300):
-        for j in range(len(chrome)):
-
-            browser.get(chrome[j])
-            print(str(datetime.datetime.now())[:-3],'浏览器打开第',j+1,'个页面刷新第',i+1, '次')
-
+    with open(dict+'.xlsx', 'wb') as f:
+        f.write(mylist.export('xlsx'))
 
 # 主方法,如果变量__name__为主方法，执行下一步，
 # 如果被其他程序引用，变量__name__为本文件名（xxqg），！=__main__，不继续进行

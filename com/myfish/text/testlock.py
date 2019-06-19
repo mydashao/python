@@ -1,7 +1,7 @@
 import threading
 import time
 
-name_list=[1,2,3,4,5,6,7,8,9,0]
+name_list=[1,2,3,4,5,6,7,8,9,0,11,12,13,14,15,16,17,18,19,20]
 
 def xx():
     lock = threading.Lock()
@@ -15,7 +15,6 @@ def xx():
         print("启动")
 
         t.start()
-        time.sleep(1)
 
 def get_ti(name,lock):
     refresh(name,lock)
